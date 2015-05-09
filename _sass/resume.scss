@@ -1,0 +1,86 @@
+/* side bar button */
+.article-author-side {
+  .resume {
+    margin-top: 50px;
+    padding: 10px 0;
+  }
+}
+
+/* subway visualization */
+#instructions {
+  margin: 25px auto 5px;
+  color: #999;
+  font-style: italic;
+  width: 720px;
+}
+
+#subway-map {
+  margin: 0 auto 25px;
+  width: 720px;
+  height:480px;
+  background-color: white;
+  border-radius: 10px;
+  border: solid 10px #eee;
+
+  span {
+    margin: 5px 5px 5px 0;
+  }
+}
+
+/* Text labels */
+.text {
+  text-decoration: none;
+  color: black;
+  font: normal 12pt Verdana, Monaco, sans-serif;
+}
+
+.text:hover {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#legend {
+  margin: 0 auto;
+  width: 720px;
+  height:400px;
+  font: normal 10pt Verdana, Monaco, sans-serif;
+
+  div {
+    height: 25px;
+  }
+
+  span {
+    margin: 5px 5px 5px 0;
+  }
+}
+
+.webui-popover-inner {
+  font: normal 10pt Arial, Monaco, sans-serif;
+
+  > .webui-popover-title {
+    > p {
+      margin: 0;
+    }
+
+    > .job-title {
+      font-weight: bold;
+    }      
+
+    > .company {
+      font-weight: normal;
+    }
+
+    > .period {
+      font-weight: normal;
+    }
+  }
+
+  > .webui-popover-content > ul {
+    margin: 0;
+    padding-left: 12px;
+
+    li {
+      margin-bottom: 5px;
+    }
+  }
+}
