@@ -16,11 +16,15 @@ This post shows how to add a 3rd party AngularJS filter and use it in your views
 
 First, import the filter into the app
 
-    $ bower i --save angular-truncate
+{% highlight sh %}
+$ bower i --save angular-truncate
+{% endhighlight %}
 
-Second, to tell MEAN.JS to load this filter in your template, edit `config/env/all.js` and add a new element to the `assets.lib.js` array with `public/lib/angular-truncate/src/truncate.js`
+You should see a folder `public/lib/angular-truncate`
 
-{% highlight javascript %}
+Second, to tell MEAN.JS to load this filter in your template, edit `config/env/all.js` and add a new element to the `assets.lib.js` array with `public/lib/angular-truncate/src/truncate.js` (line 28).
+
+{% highlight javascript linenos %}
 'use strict';
 
 module.exports = {
@@ -69,9 +73,9 @@ module.exports = {
 };
 {% endhighlight %}
 
-Third, to inject it into your app, edit the `public/config.js` file and add a new element to the end of the array `applicationModuleVendorDependencies` with the module name `truncate`
+Third, to inject it into your app, edit the `public/config.js` file and add a new element to the end of the array `applicationModuleVendorDependencies` with the module name `truncate` (line 7).
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 'use strict';
 
 // Init the application configuration module for AngularJS application

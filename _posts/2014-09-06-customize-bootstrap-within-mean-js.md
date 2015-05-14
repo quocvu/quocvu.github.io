@@ -11,19 +11,26 @@ image:
   creditlink: 
 ---
 
-Currently, MEAN.JS ships with Bootstrap but does not support extending it with LESS. To add additional styles, we need to add CSS files. To customize the default theme, we need to overwrite exiting styles with a new CSS. This layered approach is impractical for several reasons. First, we need write CSS instead of LESS. Second, we don't get access to all the variables and mixins provided by Bootstrap.
+Currently, MEAN.JS ships with Bootstrap but does not support extending it with LESS. 
+To add additional styles, we need to add CSS files. 
+To customize the default theme, we need to overwrite exiting styles with a new CSS. 
+This layered approach is impractical for several reasons. 
+First, we need write CSS instead of LESS. Second, we don't get access to all the variables and mixins provided by Bootstrap.
 
-I would much rather generate a single CSS file combining Bootstrap, my customizations, and additional styles together. This file is placed in public/application.min.css. Let's see how we add LESS compilation and remove the existing auto inclusion of CSS files scattered in various AngularJS modules.
+I would much rather generate a single CSS file combining Bootstrap, my customizations, and additional styles together. 
+This file is placed in public/application.min.css. 
+Let's see how we add LESS compilation and remove the existing auto inclusion of CSS files scattered in various AngularJS modules.
+
 
 # Remove CSS
 
 Edit `config/env/all.js`: 
 
-* Remove from `assets.lib.css` array`public/lib/bootstrap/dist/css/bootstrap.css` and `public/lib/bootstrap/dist/css/bootstrap-theme.css`. Make sure to leave an empty array (don't remove the css array)
-* Remove from `assets.css` the first element `public/modules/**/css/*.css`. We don't write CSS but LESS. Add `public/application.min.css` to this array. It will be auto included by `app/views/templates/layout.server.view.html`
-* Change `assets.css` to `public/application.min.css`
+* Remove from `assets.lib.css` array`public/lib/bootstrap/dist/css/bootstrap.css` and `public/lib/bootstrap/dist/css/bootstrap-theme.css`. Make sure to leave an empty array (don't remove the css array) as shown on line 26.
+* Remove from `assets.css` the first element `public/modules/**/css/*.css`. We don't write CSS but LESS. 
+* Add `public/application.min.css` to this array (line 29). It will be auto included by `app/views/templates/layout.server.view.html`
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 'use strict';
 
 module.exports = {
@@ -73,13 +80,13 @@ Edit `config/env/production.js` and remove `assets.lib.css` and `assets.css` ent
 # Combine LESS Files Into One
 
 * Copy the file `public/lib/bootstrap/less/bootstrap.less` to `public/less/application.less` and fix the import path of less files.
-* Add a file `public/less/variables.less` to overwrite Bootstrap variables and add any new variables. Import it into `public/less/application.less` by inserting it right after the import of bootstrap variables.
-* Add a file `public/less/mixins.less` to overwrite Bootstrap mixins and define your own mixins.  Import it into `public/less/application.less` by inserting it right after the import of bootstrap mixins.
-* Include any other LESS files you need to create. Files defining styles for the entire application would go in `public/less`. Files with style for specific modules go in their respective less folders `public/modules/xyz/less`
+* Add a file `public/less/variables.less` to overwrite Bootstrap variables and add any new variables. Import it into `public/less/application.less` by inserting it right after the import of bootstrap variables (line 4).
+* Add a file `public/less/mixins.less` to overwrite Bootstrap mixins and define your own mixins.  Import it into `public/less/application.less` by inserting it right after the import of bootstrap mixins (line 8).
+* Include any other LESS files you need to create. Files defining styles for the entire application would go in `public/less` (line 58). Files with style for specific modules go in their respective less folders `public/modules/xyz/less` (lines 59 and 60).
 
 The `public/less/application.less` should look like this:
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 // Core variables and mixins
 @import "../lib/bootstrap/less/variables.less";
 // -- Overwrite bootstrap and additional variables
@@ -152,7 +159,7 @@ Install the grunt task to compile LESS files
 
 Tell grunt to compile our LESS file by adding this block into `gruntfile.js` in the `grunt.initConfig` options
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 less: {
   production: {
     options: {
