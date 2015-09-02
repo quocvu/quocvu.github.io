@@ -13,7 +13,7 @@ I just want to expand on documentation of [remote methods](https://docs.stronglo
 and hope I can save you some time.  
 
 The documentation shows how to return a string and we can easily see how it would work for any primitive data types. 
-The handler (i.e. Person.great function) returns a string, the REST API, wrap it with a JSON object and returns 
+The handler (i.e. Person.great function) returns a string, the REST API, wraps it with a JSON object and returns 
 `{ "greetings": "Greetings... John!" }`.
 
 Now let say we have a method returning the address where this person lives. The handler would return an object (e.g. a model).
@@ -37,7 +37,7 @@ module.exports = function(Person) {
 {% endhighlight %}
 
 The thing I want to point out here is the property `root: true` on line 13. 
-Without it it would return a JSON like this 
+Without it, this REST endpoint would return a JSON like this 
 
 ```
 {
@@ -49,6 +49,10 @@ Without it it would return a JSON like this
 }
 ```
 
-I found out about by enabling debugging by starting the app this way: 
+I found out about this by enabling debugging by starting the app this way: 
 
-    $ DEBUG=loopback:explorer:routeHelpers node .
+```
+$ DEBUG=loopback:explorer:routeHelpers node .
+```
+
+You can see how the default API endpoints are defined.  They are very useful examples to follow.
