@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Stubbing required NodeJS modules with Sinon
-excerpt: "A cool trick To support old browser without `placeholder` attribute"
+excerpt: How to stub methods from imported modules to control their behaviors
 modified: 2015-11-29
-tags: [nodejs, node, js, unit, test, mock, stub, sinon, require, module]
+tags: [nodejs, node, js, unit, test, mock, stub, spy, sinon, require, module, control, behavior]
 comments: true
 image:
   feature: lighthouse.jpg
