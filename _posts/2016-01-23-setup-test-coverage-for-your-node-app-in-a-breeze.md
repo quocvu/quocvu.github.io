@@ -131,7 +131,7 @@ We create a npm command to run it by putting this in `package.json`
 {% highlight json linenos %}
 "scripts": {
   "test": "NODE_ENV=test mocha",
-  "cover": "istanbul cover _mocha"
+  "cover": "NODE_ENV=test istanbul cover _mocha"
 }
 {% endhighlight %}
 
@@ -188,12 +188,12 @@ Let's set it up.
 {% highlight json linenos %}
 "scripts": {
   "test": "NODE_ENV=test mocha",
-  "cover": "istanbul cover _mocha",
+  "cover": "NODE_ENV=test istanbul cover _mocha",
   "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
 }
 {% endhighlight %}
 
-* Make TravisCi run our code coverage by adding this to `.travis.yml`
+* Make TravisCI run our code coverage by adding this to `.travis.yml`
 
 {% highlight yaml linenos %}
 after_success:
