@@ -8,8 +8,8 @@ resume: visual
 share: false
 image:
   feature: mountains.jpg
-  credit: 
-  creditlink: 
+  credit:
+  creditlink:
 ---
 
 <div id="instructions">Mouse over for details</div>
@@ -19,21 +19,21 @@ image:
     <li data-coords="6,4" data-marker="interchange" data-labelPos="S"><a href="summary">Summary</a></li>
 {% for exp in site.data.resume.experience %}
     <li data-coords="{{ exp.subway.coords }}" data-marker="station" data-labelPos="{{ exp.subway.label }}" {% if exp.subway.dir %}data-dir="{{ exp.subway.dir }}"{% endif %}><a href="{{ exp.id }}">{% if exp.company-abbr %} {{ exp.company-abbr }} {% else %} {{ exp.company }} {% endif %}</a></li>
-{% endfor %}  
+{% endfor %}
   </ul>
 
   <ul data-color="#E63339" data-label="Skills">
     <li data-coords="6,4" data-marker="interchange" data-labelPos="S"></li>
 {% for skill in site.data.resume.skills %}
     <li data-coords="{{ skill.subway.coords }}" data-marker="station" data-labelPos="{{ skill.subway.label }}" {% if skill.subway.dir %}data-dir="{{ skill.subway.dir }}"{% endif %}><a href="{{ skill.id }}">{{ skill.title }}</a></li>
-{% endfor %}  
+{% endfor %}
   </ul>
 
   <ul data-color="#87B716" data-label="Education" data-shiftCoords="1,0">
     <li data-coords="6,4" data-marker="interchange" data-labelPos="S"></li>
 {% for edu in site.data.resume.education %}
     <li data-coords="{{ edu.subway.coords }}" data-marker="station" data-labelPos="{{ edu.subway.label }}" {% if edu.subway.dir %}data-dir="{{ edu.subway.dir }}"{% endif %}><a href="{{ edu.id }}">{{ edu.degree-abbr }}</a></li>
-{% endfor %}  
+{% endfor %}
   </ul>
 
   <ul data-color="#F6B002" data-label="Publications">
@@ -70,13 +70,25 @@ $(document).ready(function() {
 </script>
 
 <ul id="data">
+  <li id="summary">
+    <div class="title">Summary</div>
+    <div class="description">
+      <ul>
+  {% for desc in site.data.resume.summary %}
+        <li>{{ desc }}</li>
+  {% endfor %}
+      </ul>
+    </div>
+  </li>
+
+
 {% for exp in site.data.resume.experience %}
   <li id="{{ exp.id }}">
     <div class="title">
       <p class="job-title">{{ exp.title }}</p>
       <p class="company">@ {{ exp.company }}</p>
       <p class="period">{{ exp.period }}</p>
-    </div>    
+    </div>
     <div class="description">
       <ul>
   {% for desc in exp.desc %}
