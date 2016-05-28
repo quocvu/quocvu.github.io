@@ -2,13 +2,13 @@
 
 title:            Quoc's Corner
 locale:           en_US
-url:              
+url:
 
 # Jekyll configuration
 
 permalink:   /:categories/:title/
 markdown:    kramdown
-highlighter: rouge
+highlighter: pygments
 sass:
   sass_dir: _sass
   style: compressed
@@ -28,17 +28,17 @@ owner:
   name: Quoc Vu
   avatar: bio-photo.jpg
   bio: "Son, husband, father, and code addict."
-  email: 
+  email:
   disqus-shortname: darthvu
   twitter: #username
   facebook: #username
   google:
     plus: #username
-    analytics: 
-    verify: 
-    ad-client: 
-    ad-slot: 
-  bing-verify: 
+    analytics:
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
   github: quocvu
   stackoverflow: #http://stackoverflow.com/users/123456/username
   linkedin: quocvu
