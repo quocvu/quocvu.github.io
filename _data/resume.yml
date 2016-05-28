@@ -12,9 +12,12 @@ experience:
   company: Intuit
   period: 2014 - Present
   desc:
-    - Lead the development of a Continuous Integration and Continuous Delivery (CI/CD) company wide platform.
-    - Deployed a highly available and disaster recovery capable global installation of GitHub Enterprise to unify source code management across Intuit.
-    - Reducing developers onboarding time via auto provisioning cloud based development playgrounds.
+    - Lead the development of a Continuous Integration and Continuous Delivery (CI/CD) company wide platform on AWS CodePipeline
+    - Deployed a highly available, disaster recovery capable, global installation of GitHub Enterprise to unify source code management across all Intuit's business units.
+    - Brought Github into Intuit and unified previously fragmented source control management (Stash, Gitlab, SVN, Perforce) into one central instance resulting into drastic license cost saving and higher developers collaboration and productivity.
+    - Advocate and coach other teams on git, Github, and agile best practices.
+    - Reduced developers onboarding time via auto provisioning cloud based development playgrounds.
+    - Active member of the GreenTeam working on reducing on campus waste.
   subway:
     coords: '6,5'
     label: W
@@ -29,7 +32,7 @@ experience:
   - Innovated a point of sales iOS application for a Magento store.
   - Developed an iOS application to administrate a Magento store.
   - Designed and developed a new unified API and Service framework enabling SOAP and REST interfaces for Magento services.
-  subway:    
+  subway:
     coords: '5,6'
     label: S
     dir: S
@@ -49,7 +52,7 @@ experience:
   - Automated the control and monitoring of machines on the manufacturing factories.
   - Erected the first data center with hot backup hosting the SCADA application. Processing 3Gbps or real-time data coming from 200 customer sites.
   - Responsible for operations of all software running in the data center, manufacturing factories, and customer sites. Maintained 99.99% uptime in the past 24 months.
-  subway:    
+  subway:
     coords: '4,5'
     label: W
     dir: W
@@ -66,7 +69,7 @@ experience:
   - Actively participate in defining road map for business units. Strategic planning to align business vision to system evolution. Work closely with 7 product managers simultaneously to define product features and priorities. Evaluate and review 3rd party applications.
   - Ensure our features run 24x7x365 and scale up to the activity of the website which currently accounts for over 125 million user accounts and process over 200 transactions per second. Resolve production issues when they arise.
   - Shipped over 120 features in 19 releases.
-  subway:    
+  subway:
     coords: '4,4'
     label: W
 
@@ -83,7 +86,7 @@ experience:
   - Engineered data cleansing techniques (e.g. commodity and supplier classification) to enrich transactions (e.g. purchase orders, invoices) with addition valuable information.
   - Turned the 5th version of the product into a software as a service (SaaS) targeted to smaller customers.
   - Shipped 6 releases of Ariba Analysis that was implemented for over 35 customers generating over $55 million in revenue.
-  subway:    
+  subway:
     coords: '4,3'
     label: W
 
@@ -98,7 +101,7 @@ experience:
   - Designed and implemented a data warehouse logical and physical data model for mass reporting. Developed data extraction from Selectica click stream logs to load into the data warehouse using Informatica PowerMart.
   - Designed a user interface for report retrieval and management. Integration and automation of data collection, extraction and reports generation.
   - Designed a metadata layer to manage the entire application data. The metadata is stored in a RDBMS and can be imported from/exported to XML format.
-  subway:    
+  subway:
     coords: '4,2'
     label: W
 
@@ -112,7 +115,7 @@ experience:
   - Developed an advanced centralized web bookmark system, which allows bookmarks sharing, automatic categorization, grouping similar bookmarks, complex queries using WQL a like SQL language.
   - Transferred the technology from PowerBookmarks prototype to NEC Software Division to be integrated with Web Content Manager product line. Obtained a research grant of $120,000 for this contribution.
   - Led 6 software engineers for technology transfer. Mentored 3 graduate interns.
-  subway:    
+  subway:
     coords: '3,1'
     label: N
     dir: N
@@ -127,7 +130,7 @@ experience:
   - Transferred the technology to IBM Intelligent Miner award-winning data mining suite.
   - Developed tools to provide business intelligence to E-Commerce applications, such as web logs mining, which can be used for online ads targeting, and to provide tactical information to improve customer relationship management.
   - Developed a suite of store analysis reporting tools "Internet Sales Predictor" that allows the merchants to identify hot sellers, loss leaders, potential cross selling opportunities.
-  subway:    
+  subway:
     coords: '2,1'
     label: N
 
@@ -140,7 +143,7 @@ experience:
   - Innovated and developed image processing and vision algorithms for map processing targeted to GIS applications.
   - Integrated a fast image-warping algorithm to an electrical monitoring system at M3i Inc for map correction and vectorization.
   - Developed a framework for creation and manipulation of intelligent autonomous agents communicating in KQML. Agents have learning capabilities and able to persist their knowledge at the termination time. Agents are created and manipulated through C++ or Java API.
-  subway:    
+  subway:
     coords: '1,2'
     label: S
     dir: W
@@ -149,12 +152,11 @@ skills:
 - id: languages
   title: Languages
   list:
-  - Ansible, Puppet, Chef
   - Java, C/C++, Objective-C
-  - CSS3, HTML5, LESS, SASS
+  - CSS3, HTML5
   - Javascript, Node JS
-  - Perl, PHP
-  subway:    
+  - Perl, PHP, Shell Bash
+  subway:
     coords: '8,4'
     label: N
 
@@ -163,10 +165,10 @@ skills:
   list:
   - DB2
   - MongoDB
+  - AWS SimpleDB, DynamoDB
   - MySQL
   - Oracle
-  - SQL Server
-  subway:    
+  subway:
     coords: '9,3'
     label: E
     dir: E
@@ -179,26 +181,25 @@ skills:
   - Linux RHEL, Ubuntu
   - Mac OSX
   - Windows
-  subway:    
+  subway:
     coords: '10,2'
     label: N
     dir: N
 
-- id: frameworks
-  title: Frameworks
+- id: technologies
+  title: Technologies and Tools
   list:
-  - Bootstrap
-  - MEAN.JS
+  - Bootstrap, LESS, SASS
+  - Loopback, MEAN.JS
   - jQuery
   - Symfony, CodeIgniter, Laravel MVC
   - Zend Framework
   - JEE (Geronimo, JBoss)
-  - ActiveMQ
-  - Drools
   - XCode
   - Git/Github, SVN, Perforce
   - Jenkins/Hudson, Maven, Ant
-  subway:    
+  - Ansible, Puppet, Chef
+  subway:
     coords: '11,2'
     label: S
 
@@ -209,39 +210,39 @@ education:
   institution: Univeristy of Montreal
   location: Canada
   period: 1993 - 1996
-  subway:    
+  subway:
     coords: '7,5'
     label: S
     dir: S
-    
+
 - id: bs
   degree: Bachelor in Science - Computer Science
   degree-abbr: B.S.
   institution: Univeristy of Montreal
   location: Canada
   period: 1990 - 1993
-  subway:    
+  subway:
     coords: '8,5'
     label: S
-    
+
 - id: math
   degree: Mathematics Superior
   degree-abbr: Math
   institution: Kleber College
   location: France
   period: 1988 - 1990
-  subway:    
+  subway:
     coords: '9,6'
     label: S
     dir: E
 
 papers:
   patents:
-  - author: Quoc Vu, Okan Kolak, Wen-Syan Li, 
+  - author: Quoc Vu, Okan Kolak, Wen-Syan Li,
     title: Method of Defining and Utilizing Logical Domains to Partition and to Reorganize Physical Domains
     number: U.S. Patent 6,647,381
     issued_at: November 2003
-  
+
   - author: Quoc Vu, Wen-Syan Li
     title: System for Personalizing, Organizing and Managing Web Information
     number: U.S. Patent 6,631,496
@@ -256,7 +257,7 @@ papers:
     title: Method and apparatus for mining association rules having item constraints
     number: U.S. Patent 6,061,682
     issued_at: May 2000
-    
+
   - author: Quoc Vu, Wen-Syan Li, Okan Kolak
     title: Topic-Focused Site Maps
     number: U.S. Patent Application Pending
