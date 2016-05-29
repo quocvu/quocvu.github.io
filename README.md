@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/quocvu/quocvu.github.io.svg?branch=master)](http://img.shields.io/travis/quocvu/quocvu.github.io.svg)
+
 # Quoc's Corner
 
 To run this site locally
