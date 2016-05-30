@@ -1,8 +1,11 @@
 # Site wide configuration
 
-title:            Quoc's Corner
-locale:           en_US
-url:
+title: Quoc's Corner
+locale: en_US
+url: 'http://quocvu.github.io'
+email: darthvu@gmail.com
+twitter_username: #username
+github_username:  #username
 
 # Jekyll configuration
 
@@ -27,7 +30,7 @@ owner:
   name: Quoc Vu
   avatar: bio-photo.jpg
   bio: "Son, husband, father, and code addict."
-  email:
+  email: darthvu@gmail.com
   disqus-shortname: darthvu
   twitter: #username
   facebook: #username
