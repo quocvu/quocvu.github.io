@@ -6,8 +6,7 @@ url:
 
 # Jekyll configuration
 
-permalink:   /:categories/:title/
-markdown:    kramdown
+markdown: kramdown
 highlighter: rouge
 sass:
   sass_dir: _sass
@@ -20,8 +19,8 @@ kramdown:
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  use_coderay: false
-
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
 
 # Site owner
 owner:
@@ -57,3 +56,4 @@ owner:
 
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor"]
+timezone: America/Los_Angeles

@@ -104,7 +104,7 @@ GEM
       mini_portile2 (~> 2.0.0.rc2)
     octokit (4.3.0)
       sawyer (~> 0.7.0, >= 0.5.3)
-    octopress (3.0.12.pre.1)
+    octopress (3.0.11)
       jekyll (>= 2.0)
       mercenary (~> 0.3.2)
       octopress-deploy
@@ -146,6 +146,6 @@ DEPENDENCIES
   github-pages
   jekyll
   jekyll-sitemap
-  octopress (~> 3.0.0.rc.12)
+  octopress
   public_suffix
   rouge
