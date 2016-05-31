@@ -15,8 +15,8 @@ sass:
   sass_dir: _sass
   style: compressed
 gems:
+  - github-pages
   - jekyll-sitemap
-  - octopress
   - rouge
 
 kramdown:

@@ -12,8 +12,7 @@ experience:
   company: Intuit
   period: 2014 - Present
   desc:
-    - Lead the port of the current Continuous Delivery application to support a multi-tenants model.
-    - Lead the development of a new Continuous Integration and Continuous Delivery (CI/CD) company wide platform on AWS CodePipeline.
+    - Lead the development of a Continuous Integration and Continuous Delivery (CI/CD) company wide platform on AWS CodePipeline
     - Deployed a highly available, disaster recovery capable, global installation of GitHub Enterprise to unify source code management across all Intuit's business units.
     - Brought Github into Intuit and unified previously fragmented source control management (Stash, Gitlab, SVN, Perforce) into one central instance resulting into drastic license cost saving and higher developers collaboration and productivity.
     - Advocate and coach other teams on git, Github, and agile best practices.
