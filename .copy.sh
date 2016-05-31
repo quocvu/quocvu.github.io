@@ -1,4 +1,4 @@
 #!/bin/bash
 
 rm -rf *
-cp -r ../tmp-quocvu.github.io .
+cp -r ../tmp-quocvu.github.io/* .
