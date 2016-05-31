@@ -15,7 +15,9 @@ sass:
   sass_dir: _sass
   style: compressed
 gems:
+  - github-pages
   - jekyll-sitemap
+  - rouge
 
 kramdown:
   auto_ids: true
