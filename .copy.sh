@@ -1,5 +1,5 @@
 #!/bin/bash
 
-rm -rf ../tmp-quocvu.github.com/*
-cp -r _site/* ../tmp-quocvu.github.com
+rm -rf ../tmp-quocvu.github.io/*
+cp -r _site/* ../tmp-quocvu.github.io
 git checkout master
