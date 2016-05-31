@@ -1,0 +1,464 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Stubbing required NodeJS modules with Sinon &#8211; Quoc's Corner</title>
+<meta name="description" content="How to stub methods from imported modules to control their behaviors">
+<meta name="keywords" content="nodejs, node, js, unit, test, mock, stub, spy, sinon, require, module, control, behavior">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Stubbing required NodeJS modules with Sinon">
+<meta name="twitter:description" content="How to stub methods from imported modules to control their behaviors">
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://quocvu.github.io/images/lighthouse.jpg">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stubbing required NodeJS modules with Sinon">
+<meta property="og:description" content="How to stub methods from imported modules to control their behaviors">
+<meta property="og:url" content="http://quocvu.github.io/2015/11/29/stubbing-required-node-js-modules-with-sinon.html">
+<meta property="og:site_name" content="Quoc's Corner">
+
+
+
+
+
+<link rel="canonical" href="http://quocvu.github.io/2015/11/29/stubbing-required-node-js-modules-with-sinon.html">
+<link href="http://quocvu.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Quoc's Corner Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://quocvu.github.io/assets/css/main.css">
+<link rel="stylesheet" href="http://quocvu.github.io/assets/css/jquery.webui-popover.min.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="http://quocvu.github.io/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="http://quocvu.github.io/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://quocvu.github.io/assets/js/vendor/modernizr-2.7.1.custom.min.js" type="text/javascript"></script>
+<script src="http://quocvu.github.io/assets/js/vendor/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="http://quocvu.github.io/assets/js/plugins/jquery.subwayMap-0.5.0.js" type="text/javascript"></script>
+<script src="http://quocvu.github.io/assets/js/plugins/jquery.webui-popover.js" type="text/javascript"></script>
+
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://quocvu.github.io/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://quocvu.github.io/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://quocvu.github.io/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://quocvu.github.io/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://quocvu.github.io/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://quocvu.github.io/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://quocvu.github.io/">Quoc's Corner</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				    <li><a href="http://quocvu.github.io/about/" >About</a></li>
+				
+				    
+				    <li><a href="http://quocvu.github.io/posts/" >Blog</a></li>
+				
+				    
+				    <li><a href="http://quocvu.github.io/resume/" >Resume</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+  <div class="image-wrap">
+  <img src=
+    
+      "http://quocvu.github.io/images/lighthouse.jpg"
+    
+  alt="Stubbing required NodeJS modules with Sinon feature image">
+  
+  </div><!-- /.image-wrap -->
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="http://quocvu.github.io/images/bio-photo.jpg" class="bio-photo" alt="Quoc Vu bio photo">
+
+
+  <h3 itemprop="name">Quoc Vu</h3>
+  <p>Son, husband, father, and code addict.</p>
+  <a href="mailto:darthvu@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  
+  
+  
+  <a href="http://linkedin.com/in/quocvu" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  
+  
+  <a href="http://github.com/quocvu" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="http://quocvu.github.io/2015/11/29/stubbing-required-node-js-modules-with-sinon.html" rel="bookmark" title="Stubbing required NodeJS modules with Sinon">Stubbing required NodeJS modules with Sinon</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>In this post, I will show how to stub functions from imported modules so that to isolate 
+the code to be unit tested.</p>
+
+<p>Let’s first write a function to test. This function simply 
+<a href="https://developer.github.com/v3/orgs/#list-all-organizations">retrieves a list of organizations</a> 
+from GitHub using its REST API.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">getOrgs</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">uri</span><span class="p">:</span> <span class="s1">'https://api.github.com/organizations'</span><span class="p">,</span>
+      <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'User-Agent'</span><span class="p">:</span> <span class="s1">'My-test-app'</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="nx">request</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'An error occured'</span><span class="p">);</span>
+
+        <span class="c1">// handle this error</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Received'</span><span class="p">,</span> <span class="nx">body</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="s1">'organizations'</span><span class="p">);</span>
+
+          <span class="c1">// do something with the orgs in the body</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="s1">'Cannot retrieve organizations'</span><span class="p">,</span> <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span><span class="p">);</span>
+
+          <span class="c1">// handle this corner case</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">});</span> 
+  <span class="p">}</span>  
+<span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Through this example, we show how to stub a method (get) from an imported module (request) 
+and how to verify the different parts of the callback function being executed.</p>
+
+<p>Here we rely on the <code class="highlighter-rouge">request</code> module (imported by line 1) to make an HTTPS request to 
+GitHub. But, when running unit tests, we cannot let it makes round trips to GitHub and hoping it
+would always return the results we need. Instead we need to control the results of the 
+<code class="highlighter-rouge">request.get()</code> method so that we can achieve the desired test coverage of our code from line 
+13 to 27. For that we need to stub this method and we will do that with the help of the 
+<a href="http://sinonjs.org">SinonJS</a> module.</p>
+
+<p>Let’s see what our unit tests look like. We assume the code above is in a file called <code class="highlighter-rouge">app.js</code> 
+located in the same directory as this test code.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57</pre></td><td class="code"><pre><span class="kd">var</span> 
+  <span class="nx">mocha</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mocha'</span><span class="p">),</span>
+  <span class="nx">should</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'should'</span><span class="p">),</span>
+  <span class="nx">sinon</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'sinon'</span><span class="p">);</span>
+  <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">),</span>
+  <span class="nx">app</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'./app'</span><span class="p">);</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s1">'sinon stub tutorial'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="s1">'should get some organizations returned'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">doneCallback</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">sinon</span><span class="p">.</span><span class="nx">spy</span><span class="p">(</span><span class="nx">console</span><span class="p">,</span> <span class="s1">'log'</span><span class="p">);</span>      
+    <span class="nx">sinon</span>
+      <span class="p">.</span><span class="nx">stub</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="s1">'get'</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">yields</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span> <span class="na">statusCode</span><span class="p">:</span> <span class="mi">200</span> <span class="p">},</span> <span class="p">[{</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'org-one'</span> <span class="p">},</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'org-two'</span><span class="p">}]);</span>
+
+    <span class="nx">app</span><span class="p">.</span><span class="nx">getOrgs</span><span class="p">();</span>
+
+    <span class="nx">request</span><span class="p">.</span><span class="nx">get</span><span class="p">.</span><span class="nx">calledOnce</span><span class="p">.</span><span class="nx">should</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="kc">true</span><span class="p">();</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">calledOnce</span><span class="p">.</span><span class="nx">should</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="kc">true</span><span class="p">();</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">calledWith</span><span class="p">(</span><span class="s1">'Received'</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'organizations'</span><span class="p">).</span><span class="nx">should</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="kc">true</span><span class="p">();</span>
+
+    <span class="nx">request</span><span class="p">.</span><span class="nx">get</span><span class="p">.</span><span class="nx">restore</span><span class="p">();</span>    
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">restore</span><span class="p">();</span>
+    <span class="nx">doneCallback</span><span class="p">();</span>
+  <span class="p">});</span>
+
+  <span class="nx">it</span><span class="p">(</span><span class="s1">'should have a bad status code'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">doneCallback</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">sinon</span><span class="p">.</span><span class="nx">spy</span><span class="p">(</span><span class="nx">console</span><span class="p">,</span> <span class="s1">'warn'</span><span class="p">);</span>      
+    <span class="nx">sinon</span>
+      <span class="p">.</span><span class="nx">stub</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="s1">'get'</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">yields</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span> <span class="na">statusCode</span><span class="p">:</span> <span class="mi">403</span> <span class="p">},</span> <span class="kc">null</span><span class="p">);</span>
+
+    <span class="nx">app</span><span class="p">.</span><span class="nx">getOrgs</span><span class="p">();</span>
+
+    <span class="nx">request</span><span class="p">.</span><span class="nx">get</span><span class="p">.</span><span class="nx">calledOnce</span><span class="p">.</span><span class="nx">should</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="kc">true</span><span class="p">();</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">.</span><span class="nx">calledOnce</span><span class="p">.</span><span class="nx">should</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="kc">true</span><span class="p">();</span>
+
+    <span class="nx">request</span><span class="p">.</span><span class="nx">get</span><span class="p">.</span><span class="nx">restore</span><span class="p">();</span>    
+    <span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">.</span><span class="nx">restore</span><span class="p">();</span>
+    <span class="nx">doneCallback</span><span class="p">();</span>
+  <span class="p">});</span>
+
+  <span class="nx">it</span><span class="p">(</span><span class="s1">'should have an error'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">doneCallback</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">sinon</span><span class="p">.</span><span class="nx">spy</span><span class="p">(</span><span class="nx">console</span><span class="p">,</span> <span class="s1">'error'</span><span class="p">);</span>      
+    <span class="nx">sinon</span>
+      <span class="p">.</span><span class="nx">stub</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="s1">'get'</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">yields</span><span class="p">(</span><span class="s1">'something really bad happened'</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
+
+    <span class="nx">app</span><span class="p">.</span><span class="nx">getOrgs</span><span class="p">();</span>
+
+    <span class="nx">request</span><span class="p">.</span><span class="nx">get</span><span class="p">.</span><span class="nx">calledOnce</span><span class="p">.</span><span class="nx">should</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="kc">true</span><span class="p">();</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">.</span><span class="nx">calledOnce</span><span class="p">.</span><span class="nx">should</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="kc">true</span><span class="p">();</span>
+
+    <span class="nx">request</span><span class="p">.</span><span class="nx">get</span><span class="p">.</span><span class="nx">restore</span><span class="p">();</span>    
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">.</span><span class="nx">restore</span><span class="p">();</span>
+    <span class="nx">doneCallback</span><span class="p">();</span>
+  <span class="p">});</span>
+<span class="p">});</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><strong>Stubs</strong></p>
+
+<p>Line 5 imports the <code class="highlighter-rouge">request</code> module again althought it was already imported in <code class="highlighter-rouge">app.js</code> file.<br />
+This is necessary to stub its functions later. In Node.js <code class="highlighter-rouge">require(..)</code> loads modules once into 
+a cache. Thus we load it here first, stub the functions we need, and then <code class="highlighter-rouge">app.js</code> will just use it. 
+Thus the order of the imported modules at lines 5 and 6 is very important.</p>
+
+<p>Now that the <code class="highlighter-rouge">request</code> object is accessible in our tests, we can replace its <code class="highlighter-rouge">get()</code> function by a 
+<a href="http://sinonjs.org/docs/#stubs">stub</a>. Test stubs are functions with pre-programmed behavior allowing
+us to control the code paths to test. We stub <code class="highlighter-rouge">request.get()</code> at lines 12, 29, and 45 with the function
+<code class="highlighter-rouge">sinon.stub(request, 'get')</code>.  That creates a stub.</p>
+
+<p>To control the results of the stub, we use its <code class="highlighter-rouge">.yields()</code> method at lines 13, 30, and 46. The 3 parameters
+correspond to the values being passed into the anonymous function at line 12 of <code class="highlighter-rouge">app.js</code>.  We passed 
+different set of values to cover the different code paths of this anonymous function.</p>
+
+<p>And that’s how simple it is to stub functions of imported modules.</p>
+
+<p><strong>Spies</strong></p>
+
+<p>To verify the various parts of the anonymous function are being executed properly, we use 
+<a href="http://sinonjs.org/docs/#spies">spies</a>.  A test spy is a function that records arguments, return value, 
+the value of this and exception thrown (if any) for all its calls. We create a spy using <code class="highlighter-rouge">sinon.spy()</code> 
+method as shown at lines 10, 27, and 43. We can check the spies are being called as expected at lines 
+18, 19, 35, and 51.</p>
+
+<p>Note stubs are also spies, thus we can also check they are being executed as shown at lines 17, 34, and 50.</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://quocvu.github.io/2015/11/29/stubbing-required-node-js-modules-with-sinon.html" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://quocvu.github.io/2015/11/29/stubbing-required-node-js-modules-with-sinon.html" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://quocvu.github.io/2015/11/29/stubbing-required-node-js-modules-with-sinon.html" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Stubbing required NodeJS modules with Sinon</strong> was published on <time datetime="2015-11-29T00:00:00-08:00">November 29, 2015</time> and last modified on <time datetime="2015-11-29">November 29, 2015</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://quocvu.github.io/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="http://quocvu.github.io/2016/01/23/setup-test-coverage-for-your-node-app-in-a-breeze.html" title="Setup Test Coverage for your Node App in a Breeze">Setup Test Coverage for your Node App in a Breeze</a></li>
+    
+      <li><a href="http://quocvu.github.io/2015/09/01/loopback-remote-method-returning-an-object.html" title="Loopback Remote Method Returning an Object">Loopback Remote Method Returning an Object</a></li>
+    
+      <li><a href="http://quocvu.github.io/2015/06/05/auto-reload-loopback-application.html" title="Auto Reload Loopback Application">Auto Reload Loopback Application</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2016 Quoc Vu -- Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a></span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://quocvu.github.io/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://quocvu.github.io/assets/js/scripts.min.js"></script>
+
+
+  
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'darthvu'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+	        
+
+</body>
+</html>

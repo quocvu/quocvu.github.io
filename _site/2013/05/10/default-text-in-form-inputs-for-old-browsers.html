@@ -1,0 +1,267 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Default text in form inputs for old browsers &#8211; Quoc's Corner</title>
+<meta name="description" content="A cool trick To support old browser without `placeholder` attribute">
+<meta name="keywords" content="html, javascript, jquery, form, default, old-browser, trick, tip">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Default text in form inputs for old browsers">
+<meta name="twitter:description" content="A cool trick To support old browser without `placeholder` attribute">
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://quocvu.github.io/images/lighthouse.jpg">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Default text in form inputs for old browsers">
+<meta property="og:description" content="A cool trick To support old browser without `placeholder` attribute">
+<meta property="og:url" content="http://quocvu.github.io/2013/05/10/default-text-in-form-inputs-for-old-browsers.html">
+<meta property="og:site_name" content="Quoc's Corner">
+
+
+
+
+
+<link rel="canonical" href="http://quocvu.github.io/2013/05/10/default-text-in-form-inputs-for-old-browsers.html">
+<link href="http://quocvu.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Quoc's Corner Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://quocvu.github.io/assets/css/main.css">
+<link rel="stylesheet" href="http://quocvu.github.io/assets/css/jquery.webui-popover.min.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="http://quocvu.github.io/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="http://quocvu.github.io/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://quocvu.github.io/assets/js/vendor/modernizr-2.7.1.custom.min.js" type="text/javascript"></script>
+<script src="http://quocvu.github.io/assets/js/vendor/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="http://quocvu.github.io/assets/js/plugins/jquery.subwayMap-0.5.0.js" type="text/javascript"></script>
+<script src="http://quocvu.github.io/assets/js/plugins/jquery.webui-popover.js" type="text/javascript"></script>
+
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://quocvu.github.io/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://quocvu.github.io/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://quocvu.github.io/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://quocvu.github.io/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://quocvu.github.io/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://quocvu.github.io/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://quocvu.github.io/">Quoc's Corner</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				    <li><a href="http://quocvu.github.io/about/" >About</a></li>
+				
+				    
+				    <li><a href="http://quocvu.github.io/posts/" >Blog</a></li>
+				
+				    
+				    <li><a href="http://quocvu.github.io/resume/" >Resume</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+  <div class="image-wrap">
+  <img src=
+    
+      "http://quocvu.github.io/images/lighthouse.jpg"
+    
+  alt="Default text in form inputs for old browsers feature image">
+  
+  </div><!-- /.image-wrap -->
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="http://quocvu.github.io/images/bio-photo.jpg" class="bio-photo" alt="Quoc Vu bio photo">
+
+
+  <h3 itemprop="name">Quoc Vu</h3>
+  <p>Son, husband, father, and code addict.</p>
+  <a href="mailto:darthvu@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  
+  
+  
+  <a href="http://linkedin.com/in/quocvu" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  
+  
+  <a href="http://github.com/quocvu" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="http://quocvu.github.io/2013/05/10/default-text-in-form-inputs-for-old-browsers.html" rel="bookmark" title="Default text in form inputs for old browsers">Default text in form inputs for old browsers</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>To support old browser without <code class="highlighter-rouge">placeholder</code> attribute, use this cool trick to set default text in input forms.</p>
+
+<p>If the input box is empty it shows the default text and clears it when the cursor is focused on input. Then it puts the default text back once the cursors leaves without any character entered. This javascript does that</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="cm">/* Default Text */</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'.default-text'</span><span class="p">).</span><span class="nx">live</span><span class="p">(</span><span class="s1">'focus'</span><span class="p">,</span> <span class="nx">removeDefaultText</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'.default-text'</span><span class="p">).</span><span class="nx">live</span><span class="p">(</span><span class="s1">'blur'</span><span class="p">,</span> <span class="nx">addDefaultText</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'.default-text'</span><span class="p">).</span><span class="nx">blur</span><span class="p">();</span>
+<span class="p">});</span>
+ 
+<span class="kd">var</span> <span class="nx">addDefaultText</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">==</span> <span class="s1">''</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">'enabled'</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'title'</span><span class="p">));</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">};</span>
+ 
+<span class="kd">var</span> <span class="nx">removeDefaultText</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'title'</span><span class="p">)</span> <span class="o">==</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">val</span><span class="p">())</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">'enabled'</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>In your form input be sure to add the attributes <code class="highlighter-rouge">class="default-text"</code> and <code class="highlighter-rouge">title="your default text here"</code></p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://quocvu.github.io/2013/05/10/default-text-in-form-inputs-for-old-browsers.html" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://quocvu.github.io/2013/05/10/default-text-in-form-inputs-for-old-browsers.html" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://quocvu.github.io/2013/05/10/default-text-in-form-inputs-for-old-browsers.html" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Default text in form inputs for old browsers</strong> was published on <time datetime="2013-05-10T00:00:00-07:00">May 10, 2013</time> and last modified on <time datetime="2013-05-31">May 31, 2013</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://quocvu.github.io/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="http://quocvu.github.io/2016/01/23/setup-test-coverage-for-your-node-app-in-a-breeze.html" title="Setup Test Coverage for your Node App in a Breeze">Setup Test Coverage for your Node App in a Breeze</a></li>
+    
+      <li><a href="http://quocvu.github.io/2015/11/29/stubbing-required-node-js-modules-with-sinon.html" title="Stubbing required NodeJS modules with Sinon">Stubbing required NodeJS modules with Sinon</a></li>
+    
+      <li><a href="http://quocvu.github.io/2015/09/01/loopback-remote-method-returning-an-object.html" title="Loopback Remote Method Returning an Object">Loopback Remote Method Returning an Object</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2016 Quoc Vu -- Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a></span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://quocvu.github.io/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://quocvu.github.io/assets/js/scripts.min.js"></script>
+
+
+  
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'darthvu'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+	        
+
+</body>
+</html>

@@ -1,0 +1,525 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Setup Test Coverage for your Node App in a Breeze &#8211; Quoc's Corner</title>
+<meta name="description" content="How to setup your test coverage in the cloud">
+<meta name="keywords" content="nodejs, javascript, ci, continuous integration, test, coverage, travisci, houndci, coveralls, istanbul">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Setup Test Coverage for your Node App in a Breeze">
+<meta name="twitter:description" content="How to setup your test coverage in the cloud">
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://quocvu.github.io/images/lighthouse.jpg">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Setup Test Coverage for your Node App in a Breeze">
+<meta property="og:description" content="How to setup your test coverage in the cloud">
+<meta property="og:url" content="http://quocvu.github.io/2016/01/23/setup-test-coverage-for-your-node-app-in-a-breeze.html">
+<meta property="og:site_name" content="Quoc's Corner">
+
+
+
+
+
+<link rel="canonical" href="http://quocvu.github.io/2016/01/23/setup-test-coverage-for-your-node-app-in-a-breeze.html">
+<link href="http://quocvu.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Quoc's Corner Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://quocvu.github.io/assets/css/main.css">
+<link rel="stylesheet" href="http://quocvu.github.io/assets/css/jquery.webui-popover.min.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="http://quocvu.github.io/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="http://quocvu.github.io/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://quocvu.github.io/assets/js/vendor/modernizr-2.7.1.custom.min.js" type="text/javascript"></script>
+<script src="http://quocvu.github.io/assets/js/vendor/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="http://quocvu.github.io/assets/js/plugins/jquery.subwayMap-0.5.0.js" type="text/javascript"></script>
+<script src="http://quocvu.github.io/assets/js/plugins/jquery.webui-popover.js" type="text/javascript"></script>
+
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://quocvu.github.io/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://quocvu.github.io/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://quocvu.github.io/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://quocvu.github.io/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://quocvu.github.io/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://quocvu.github.io/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://quocvu.github.io/">Quoc's Corner</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				    <li><a href="http://quocvu.github.io/about/" >About</a></li>
+				
+				    
+				    <li><a href="http://quocvu.github.io/posts/" >Blog</a></li>
+				
+				    
+				    <li><a href="http://quocvu.github.io/resume/" >Resume</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+  <div class="image-wrap">
+  <img src=
+    
+      "http://quocvu.github.io/images/lighthouse.jpg"
+    
+  alt="Setup Test Coverage for your Node App in a Breeze feature image">
+  
+  </div><!-- /.image-wrap -->
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="http://quocvu.github.io/images/bio-photo.jpg" class="bio-photo" alt="Quoc Vu bio photo">
+
+
+  <h3 itemprop="name">Quoc Vu</h3>
+  <p>Son, husband, father, and code addict.</p>
+  <a href="mailto:darthvu@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  
+  
+  
+  <a href="http://linkedin.com/in/quocvu" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  
+  
+  <a href="http://github.com/quocvu" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="http://quocvu.github.io/2016/01/23/setup-test-coverage-for-your-node-app-in-a-breeze.html" rel="bookmark" title="Setup Test Coverage for your Node App in a Breeze">Setup Test Coverage for your Node App in a Breeze</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>It is always a good things to write units tests against our code.  Once we have some unit tests written,
+the next question is do our tests have enough code coverage.  This post shows you how to setup up your CI to run
+unit tests and report them using cloud based tools. More specifically, we use <a href="https://travis-ci.org">TravisCI</a>
+to perform builds and we show the test coverage on <a href="https://coveralls.io">Coveralls.io</a>.</p>
+
+<h1 id="source-app">Source App</h1>
+
+<p>Let say we have a Node app containing a file <code class="highlighter-rouge">src/age.js</code> with the following code:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13</pre></td><td class="code"><pre><span class="s1">'use strict'</span><span class="p">;</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">older</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">age</span> <span class="o">&gt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">a</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">' is older than '</span> <span class="o">+</span> <span class="nx">b</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">age</span> <span class="o">&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">b</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">' is older than '</span> <span class="o">+</span> <span class="nx">a</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">a</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">' and '</span> <span class="o">+</span> <span class="nx">b</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">' have the same age'</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<h1 id="unit-tests">Unit Tests</h1>
+
+<p>Now, we add unit tests for the code above.  We put the tests in ‘test/age.js’ as:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">should</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'should'</span><span class="p">),</span>
+  <span class="nx">age</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'../src/age.js'</span><span class="p">);</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s1">'My test suite'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">ben</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'Ben'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">31</span> <span class="p">},</span>
+    <span class="nx">frank</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'Frank'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">27</span> <span class="p">},</span>
+    <span class="nx">john</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'John'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">27</span> <span class="p">};</span>
+
+  <span class="nx">it</span><span class="p">(</span><span class="s1">'should assess who is older'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">age</span><span class="p">.</span><span class="nx">older</span><span class="p">(</span><span class="nx">ben</span><span class="p">,</span> <span class="nx">frank</span><span class="p">).</span><span class="nx">should</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="s1">'Ben is older than Frank'</span><span class="p">);</span>
+    <span class="nx">age</span><span class="p">.</span><span class="nx">older</span><span class="p">(</span><span class="nx">frank</span><span class="p">,</span> <span class="nx">ben</span><span class="p">).</span><span class="nx">should</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="s1">'Ben is older than Frank'</span><span class="p">);</span>
+    <span class="nx">age</span><span class="p">.</span><span class="nx">older</span><span class="p">(</span><span class="nx">john</span><span class="p">,</span> <span class="nx">frank</span><span class="p">).</span><span class="nx">should</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="s1">'John and Frank have the same age'</span><span class="p">);</span>
+  <span class="p">})</span>
+<span class="p">});</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>To use <a href="https://mochajs.org/">Mocha</a> to run our tests, we add it to our app:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ npm install --save-dev mocha
+</code></pre>
+</div>
+
+<p>Then we create a new npm command to run our tests by adding this to our <code class="highlighter-rouge">package.json</code></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="s2">"scripts"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nt">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NODE_ENV=test mocha"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>And we execute all files under the <code class="highlighter-rouge">test</code> directory.  We should see something like this:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12</pre></td><td class="code"><pre><span class="gp">$ </span>npm <span class="nb">test</span>
+
+<span class="gp">&gt; </span>node_test_sample@1.0.0 <span class="nb">test</span> /node_test_sample
+<span class="gp">&gt; </span><span class="nv">NODE_ENV</span><span class="o">=</span><span class="nb">test </span>mocha
+
+
+
+  My <span class="nb">test </span>suite
+    ✓ should assess who is older
+
+
+  1 passing <span class="o">(</span>47ms<span class="o">)</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<h1 id="automated-builds-with-travisci">Automated Builds with TravisCI</h1>
+
+<p>We use <a href="https://travis-ci.org">TravisCI</a> to perform automated builds upon check ins.
+It runs our unit tests and let us know if there are problems.  Let’s set it up.</p>
+
+<ul>
+  <li>Sign up for account with TravisCI by using our GitHub ID. That links the 2 accounts together.</li>
+  <li>Go to <a href="https://travis-ci.org/profile">our TravisCI account</a> and we should see a list of GitHub repos.
+If that list is empty, comeback in 10 minutes to allow it to sync up.</li>
+  <li>Add a <code class="highlighter-rouge">.travis.yml</code> file at the root of the Node project (where <code class="highlighter-rouge">package.json</code> is located) with the following:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="s">language</span><span class="pi">:</span> <span class="s">node_js</span>
+<span class="s">node_js</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">4.2"</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">4.1"</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">4.0"</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>Push this change to GitHub and TravisCI will fire a new build.  By default it runs <code class="highlighter-rouge">npm test</code>.</li>
+  <li>Go to our <a href="https://travis-ci.org">TravisCI dashboard</a> to see the status of the new build.</li>
+  <li>Click on the badge, select <code class="highlighter-rouge">Markdown</code>, copy the little snippet, and paste it at the top of
+the <code class="highlighter-rouge">README.md</code> file. The status of the build is now shown directly on our GitHub repo main page.</li>
+</ul>
+
+<p><img src="http://quocvu.github.io/assets/images/quocvu_node_test_sample_travisci_badge.png" alt="TravisCI Badge" /></p>
+
+<p>At this point, our Node app is getting built automatically upon each check in and we get to know if our tests passed
+or failed from our Github repo page or TravisCI dashboard.</p>
+
+<h1 id="code-coverage">Code Coverage</h1>
+
+<p>It’s cool to know our tests passed, but it won’t be any good if they cover only 1% of our code.  Thus we also need
+to know how much our tests cover.</p>
+
+<h2 id="calculate-code-coverage">Calculate Code Coverage</h2>
+
+<p>We use <a href="https://gotwarlost.github.io/istanbul">Istanbul</a> to calculate code coverage. We add it to our project</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$npm install --save-dev istanbul
+</code></pre>
+</div>
+
+<p>We create a npm command to run it by putting this in <code class="highlighter-rouge">package.json</code></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="s2">"scripts"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nt">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NODE_ENV=test mocha"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"cover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NODE_ENV=test istanbul cover _mocha"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Note we use <code class="highlighter-rouge">_mocha</code> (underscore mocha) so that it doesn’t run in a child process.  Now our test run looks like this:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></td><td class="code"><pre><span class="gp">$ </span>npm run cover
+
+<span class="gp">&gt; </span>node_test_sample@1.0.0 cover /node_test_sample
+<span class="gp">&gt; </span><span class="nv">NODE_ENV</span><span class="o">=</span><span class="nb">test </span>istanbul cover _mocha
+
+
+
+  My <span class="nb">test </span>suite
+    ✓ should assess who is older
+
+
+  1 passing <span class="o">(</span>20ms<span class="o">)</span>
+
+<span class="o">=============================================================================</span>
+Writing coverage object <span class="o">[</span>/node_test_sample/coverage/coverage.json]
+Writing coverage reports at <span class="o">[</span>/node_test_sample/coverage]
+<span class="o">=============================================================================</span>
+
+<span class="o">===============================</span> Coverage summary <span class="o">===============================</span>
+Statements   : 100% <span class="o">(</span> 6/6 <span class="o">)</span>
+Branches     : 100% <span class="o">(</span> 4/4 <span class="o">)</span>
+Functions    : 100% <span class="o">(</span> 1/1 <span class="o">)</span>
+Lines        : 100% <span class="o">(</span> 6/6 <span class="o">)</span>
+<span class="o">================================================================================</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>As you can see, the code coverage results are being stored in the <code class="highlighter-rouge">./coverage</code> directory. Add this directory to
+<code class="highlighter-rouge">.gitignore</code> to avoid having them in our repo.</p>
+
+<h2 id="publishing-code-coverage">Publishing Code Coverage</h2>
+
+<p>We want publish our code coverage results (in the ./coverage directory) to <a href="http://coveralls.io/">Coveralls</a>.
+Not only it displays a nice code coverage reports, it can also send notifications when the coverage drops below
+a certain point or when it drops significantly.</p>
+
+<p>Let’s set it up.</p>
+
+<ul>
+  <li>Sign up for an account at <a href="http://coveralls.io/">Coveralls</a> using your GitHub account. The 2 accounts will be linked.</li>
+  <li>Click on the <code class="highlighter-rouge">Repo</code> menu on the left navigation</li>
+  <li>Click on <code class="highlighter-rouge">Add Repo</code> button on the top right corner to add this GitHub repo</li>
+  <li>
+    <p>Add these 2 modules to our project to upload coverage results to Coveralls</p>
+
+    <p>$ npm install –save-dev coveralls mocha-lcov-reporter</p>
+  </li>
+  <li>Create a npm command to run the upload.  Put this in <code class="highlighter-rouge">package.json</code></li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="s2">"scripts"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nt">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NODE_ENV=test mocha"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"cover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NODE_ENV=test istanbul cover _mocha"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"coveralls"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npm run cover -- --report lcovonly &amp;&amp; cat ./coverage/lcov.info | coveralls"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>Make TravisCI run our code coverage by adding this to <code class="highlighter-rouge">.travis.yml</code></li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="s">after_success</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">npm run coveralls</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>Push this change to GitHub, it will fire a Travis build, which now will run code coverage, and upload to Coveralls.</li>
+  <li>Go to <a href="http://coveralls.io/">Coveralls</a>, that’s our dashboard</li>
+  <li>Click on this repo, then click on the <code class="highlighter-rouge">Badge Urls</code> button on the top right corner, copy the snippet for <code class="highlighter-rouge">Markdown</code>,
+and paste it at the top of our <code class="highlighter-rouge">README.md</code> file. Now we can see the coverage percentage directly from GitHub.</li>
+</ul>
+
+<p><img src="http://quocvu.github.io/assets/images/quocvu_node_test_sample_coveralls_badge.png" alt="Coveralls Badge" /></p>
+
+<h1 id="voila">Voila!</h1>
+
+<p>That’s all folks.  Let’s look at our awesome repo.  You can find it at <a href="https://github.com/quocvu/node_test_sample">https://github.com/quocvu/node_test_sample</a>.
+Click on the 2 badges to see more details in TravisCI and Coveralls.</p>
+
+<p><img src="http://quocvu.github.io/assets/images/quocvu_node_test_sample_repo.png" alt="GitHub Repo" /></p>
+
+<p><img src="http://quocvu.github.io/assets/images/quocvu_node_test_sample_travisci_dashboard.png" alt="TravisCI Dashoard" /></p>
+
+<p><img src="http://quocvu.github.io/assets/images/quocvu_node_test_sample_coveralls_dashboard.png" alt="Coveralls Dashoard" /></p>
+
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://quocvu.github.io/2016/01/23/setup-test-coverage-for-your-node-app-in-a-breeze.html" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://quocvu.github.io/2016/01/23/setup-test-coverage-for-your-node-app-in-a-breeze.html" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://quocvu.github.io/2016/01/23/setup-test-coverage-for-your-node-app-in-a-breeze.html" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Setup Test Coverage for your Node App in a Breeze</strong> was published on <time datetime="2016-01-23T00:00:00-08:00">January 23, 2016</time> and last modified on <time datetime="2016-01-23">January 23, 2016</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://quocvu.github.io/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="http://quocvu.github.io/2015/11/29/stubbing-required-node-js-modules-with-sinon.html" title="Stubbing required NodeJS modules with Sinon">Stubbing required NodeJS modules with Sinon</a></li>
+    
+      <li><a href="http://quocvu.github.io/2015/09/01/loopback-remote-method-returning-an-object.html" title="Loopback Remote Method Returning an Object">Loopback Remote Method Returning an Object</a></li>
+    
+      <li><a href="http://quocvu.github.io/2015/06/05/auto-reload-loopback-application.html" title="Auto Reload Loopback Application">Auto Reload Loopback Application</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2016 Quoc Vu -- Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a></span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://quocvu.github.io/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://quocvu.github.io/assets/js/scripts.min.js"></script>
+
+
+  
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'darthvu'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+	        
+
+</body>
+</html>
