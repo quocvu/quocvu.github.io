@@ -16,7 +16,6 @@ sass:
   style: compressed
 gems:
   - jekyll-sitemap
-  - octopress
   - rouge
 
 kramdown:

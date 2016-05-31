@@ -1,5 +1,5 @@
 ---
-layout: print
+layout: pdf
 title: Quoc Vu's Resume
 tags: [quoc vu, resume, skill, experience, education]
 modified: 2014-08-08T20:53:07.573882-04:00
@@ -37,10 +37,10 @@ modified: 2014-08-08T20:53:07.573882-04:00
 # Education
 
 {% for edu in site.data.resume.education %}
-## {{ edu.degree }} 
-@ {{ edu.institution }}  
-{{ edu.location }}  
-{{ edu.period }}  
+## {{ edu.degree }}
+@ {{ edu.institution }}
+{{ edu.location }}
+{{ edu.period }}
 {% endfor %}
 
 # Patents and Publications
