@@ -3,7 +3,7 @@ summary:
 - Hands-on experience and pragmatic entrepreneurial leadership with a "get the work done" attitude.
 - Extensive experience in building teams from ground up and setting agile development structure and processes for geographically distributed teams.
 - Effective manager with strong leadership skills that engender team loyalty, passion and dedication.
-- 20 years of professional experience in the software industry exercising technology decision and vision, team and project leading, architecture design, team infrastructure management, and mentor development team members.
+- Over 20 years of professional experience in the software industry exercising technology decision and vision, team and project leading, architecture design, team infrastructure management, and mentor development team members.
 - Sharp product vision, innovation, execution, and strong and diverse technology experience.
 
 experience:
@@ -12,7 +12,8 @@ experience:
   company: Intuit
   period: 2014 - Present
   desc:
-    - Lead the development of a Continuous Integration and Continuous Delivery (CI/CD) company wide platform on AWS CodePipeline
+    - Led the development of a Continuous Integration and Continuous Delivery (CI/CD) company wide platform on AWS CodePipeline.
+    - Led the conversion of an existing Contiuous Delivery application into multi-tenant SAS based application.
     - Deployed a highly available, disaster recovery capable, global installation of GitHub Enterprise to unify source code management across all Intuit's business units.
     - Brought Github into Intuit and unified previously fragmented source control management (Stash, Gitlab, SVN, Perforce) into one central instance resulting into drastic license cost saving and higher developers collaboration and productivity.
     - Advocate and coach other teams on git, Github, and agile best practices.
