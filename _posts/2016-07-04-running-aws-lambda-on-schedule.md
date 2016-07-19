@@ -135,3 +135,6 @@ We also need to give this event the permission to execute the function (line 14-
 }
 {% endhighlight %}
 
+I whipped up an simple example to illustrate this.  It's a Lambda function that
+monitors a website at regular interval and sends SMS messages when things go wrong.
+You can check it out at <https://github.com/quocvu/website-monitor>.
