@@ -3,15 +3,28 @@ summary:
 - Hands-on experience and pragmatic entrepreneurial leadership with a "get the work done" attitude.
 - Extensive experience in building teams from ground up and setting agile development structure and processes for geographically distributed teams.
 - Effective manager with strong leadership skills that engender team loyalty, passion and dedication.
-- Over 20 years of professional experience in the software industry exercising technology decision and vision, team and project leading, architecture design, team infrastructure management, and mentor development team members.
 - Sharp product vision, innovation, execution, and strong and diverse technology experience.
 
-experience:
+events:
+- id: sap-ariba
+  type: work
+  title: Sr Engineering Manager
+  company: SAP Ariba
+  date: { from: 2016, to: Present }
+  description:
+    - Led the development of XML database and Queueing as service
+    - Led the migration of flagship Buyer and Sourcing apps from Oracle to HANA
+    - Enabled first Ariba application to run on public clouds (AWS & Azure)
+    - Converted the on premise CI/CD into an elastic cloud based app running on public clouds
+    - Advocate for Agile adoption and coaching team for Agile transformation
+    - Active member of the Palo Alto Sustainability team
+
 - id: intuit
+  type: work
   title: Principal Engineer
   company: Intuit
-  period: 2014 - Present
-  desc:
+  date: { from: 2014, to: 2016 }
+  description:
     - Led the development of a Continuous Integration and Continuous Delivery (CI/CD) company wide platform on AWS CodePipeline.
     - Led the conversion of an existing Contiuous Delivery application into multi-tenant SAS based application.
     - Deployed a highly available, disaster recovery capable, global installation of GitHub Enterprise to unify source code management across all Intuit's business units.
@@ -19,310 +32,286 @@ experience:
     - Advocate and coach other teams on git, Github, and agile best practices.
     - Reduced developers onboarding time via auto provisioning cloud based development playgrounds.
     - Active member of the GreenTeam working on reducing on campus waste.
-  subway:
-    coords: '6,5'
-    label: W
 
 - id: xcommerce
+  type: work
   title: Member of Technical Staff 2
   company: XCommerce
-  period: 2012 - 2014
-  desc:
-  - Responsible for bootstrapping new initiatives within the company to expand the product line and/or improve work productivity.
-  - Created an employee portal allowing for higher social interaction and better individual objectives alignment.
-  - Innovated a point of sales iOS application for a Magento store.
-  - Developed an iOS application to administrate a Magento store.
-  - Designed and developed a new unified API and Service framework enabling SOAP and REST interfaces for Magento services.
-  subway:
-    coords: '5,6'
-    label: S
-    dir: S
+  date: { from: 2012, to: 2014 }
+  summary: Bootstraped new product initiatives to expand X.commerce's offerings.
+  description:
+    - Responsible for bootstrapping new initiatives within the company to expand the product line and/or improve work productivity.
+    - Created an employee portal allowing for higher social interaction and better individual objectives alignment.
+    - Innovated a point of sales iOS application for a Magento store.
+    - Developed an iOS application to administrate a Magento store.
+    - Designed and developed a new unified API and Service framework enabling SOAP and REST interfaces for Magento services.
 
 - id: bloom-energy
+  type: work
   title: Head of Software Engineering
   company: Bloom Energy
-  period: 2008 - 2011
-  desc:
-  - Responsible for all software activities at Bloom Energy including development, operations, product management, QA, and release management.
-  - Founded the Software development team at Bloom Energy. Hired and managed engineers and contractors between California and India.
-  - Instituted a development and release process that resulted in continuous weekly releases over the course of 3+ years with minimal defects and almost no planning churn.
-  - Provide software vision and leadership to the company including infrastructure, cyber and physical security, scalability to monitor and control megawatts fleet, integration with back-office business applications, and lowering operating cost through software and automation.
-  - Architected a mission critical 24x7 distributed monitoring system (SCADA) for controlling, supervising and optimizing fuel cell operations over the internet allowing central operators to remotely monitor and control fuel cells installed across different states.
-  - Developed an analytical platform for reporting, forecasting parts failure and maintenance schedule, and optimizing fleet energy generation.
-  - Designed an abstraction layer to interact and control hardware components of the fuel cell.
-  - Automated the control and monitoring of machines on the manufacturing factories.
-  - Erected the first data center with hot backup hosting the SCADA application. Processing 3Gbps or real-time data coming from 200 customer sites.
-  - Responsible for operations of all software running in the data center, manufacturing factories, and customer sites. Maintained 99.99% uptime in the past 24 months.
-  subway:
-    coords: '4,5'
-    label: W
-    dir: W
+  date: { from: 2008, to: 2011 }
+  description:
+    - Responsible for all software activities at Bloom Energy including development, operations, product management, QA, and release management.
+    - Founded the Software development team at Bloom Energy. Hired and managed engineers and contractors between California and India.
+    - Instituted a development and release process that resulted in continuous weekly releases over the course of 3+ years with minimal defects and almost no planning churn.
+    - Provide software vision and leadership to the company including infrastructure, cyber and physical security, scalability to monitor and control megawatts fleet, integration with back-office business applications, and lowering operating cost through software and automation.
+    - Architected a mission critical 24x7 distributed monitoring system (SCADA) for controlling, supervising and optimizing fuel cell operations over the internet allowing central operators to remotely monitor and control fuel cells installed across different states.
+    - Developed an analytical platform for reporting, forecasting parts failure and maintenance schedule, and optimizing fleet energy generation.
+    - Designed an abstraction layer to interact and control hardware components of the fuel cell.
+    - Automated the control and monitoring of machines on the manufacturing factories.
+    - Erected the first data center with hot backup hosting the SCADA application. Processing 3Gbps or real-time data coming from 200 customer sites.
+    - Responsible for operations of all software running in the data center, manufacturing factories, and customer sites. Maintained 99.99% uptime in the past 24 months.
 
 - id: paypal
+  type: work
   title: Senior Architect / Engineering Manager
   company: PayPal
-  period: 2004 - 2008
-  desc:
-  - "Led several teams during my tenure covering different business areas: Funding Mix, Consumer Experience, Customer Service, Marketing Platform, Merchant Risk Assessment and Management."
-  - Teams are distributed between California, Arizona, and India. Formed and groomed 3 new teams.
-  - Responsible for architecture and technical design as well as project delivery and quality. Review, advise, and guide the technical design process. Enforce best practices in application development. Mentor and coach engineers for career growth as well as general people/team management activities.
-  - Drive implementation of multiple simultaneous projects with a short 1-2 month development cycle. Hands-on project and resource management. Create and maintain project plan, tasks list, features list, bugs list. Assess risk mitigation.
-  - Actively participate in defining road map for business units. Strategic planning to align business vision to system evolution. Work closely with 7 product managers simultaneously to define product features and priorities. Evaluate and review 3rd party applications.
-  - Ensure our features run 24x7x365 and scale up to the activity of the website which currently accounts for over 125 million user accounts and process over 200 transactions per second. Resolve production issues when they arise.
-  - Shipped over 120 features in 19 releases.
-  subway:
-    coords: '4,4'
-    label: W
+  date: { from: 2004, to: 2008 }
+  summary: Led the development and launch of many key products including Funding Mix, Consumer experience, customer service tools, marketing platform, merchant risk
+  description:
+    - "Led several teams during my tenure covering different business areas: Funding Mix, Consumer Experience, Customer Service, Marketing Platform, Merchant Risk Assessment and Management."
+    - Teams are distributed between California, Arizona, and India. Formed and groomed 3 new teams.
+    - Responsible for architecture and technical design as well as project delivery and quality. Review, advise, and guide the technical design process. Enforce best practices in application development. Mentor and coach engineers for career growth as well as general people/team management activities.
+    - Drive implementation of multiple simultaneous projects with a short 1-2 month development cycle. Hands-on project and resource management. Create and maintain project plan, tasks list, features list, bugs list. Assess risk mitigation.
+    - Actively participate in defining road map for business units. Strategic planning to align business vision to system evolution. Work closely with 7 product managers simultaneously to define product features and priorities. Evaluate and review 3rd party applications.
+    - Ensure our features run 24x7x365 and scale up to the activity of the website which currently accounts for over 125 million user accounts and process over 200 transactions per second. Resolve production issues when they arise.
+    - Shipped over 120 features in 19 releases.
 
 - id: ariba
+  type: work
   title: Principal Software Engineer
   company: Ariba
-  period: 2001 - 2004
-  desc:
-  - Work for the CTO to explore new innovative ideas to expand Ariba product line, improve inter-product integration and communication, and enrich product functionalities and usability.
-  - Coordinate and advise on analytical and reporting initiative in other Ariba products.
-  - Launched a new product, Ariba Analysis, to enable decision making personnel to quickly analyze their spend across the entire organization.
-  - Responsible for the product back-end architecture including data loading automation, data loading mapping specifications, data extraction schemes, data cleansing process, data modeling, integration, customization mechanism.
-  - Designed a mechanism (XML description based) to allow customers to extend their data model to their needs. Customizations persist thru upgrades. Customizations go from schema extension, data loading instructions, to report definitions.
-  - Engineered data cleansing techniques (e.g. commodity and supplier classification) to enrich transactions (e.g. purchase orders, invoices) with addition valuable information.
-  - Turned the 5th version of the product into a software as a service (SaaS) targeted to smaller customers.
-  - Shipped 6 releases of Ariba Analysis that was implemented for over 35 customers generating over $55 million in revenue.
-  subway:
-    coords: '4,3'
-    label: W
+  date: { from: 2001, to: 2004 }
+  summary: Led the development of a new R-OLAP based product to analyze Procurement and Sourcing activities on Ariba's platform
+  description:
+    - Work for the CTO to explore new innovative ideas to expand Ariba product line, improve inter-product integration and communication, and enrich product functionalities and usability.
+    - Coordinate and advise on analytical and reporting initiative in other Ariba products.
+    - Launched a new product, Ariba Analysis, to enable decision making personnel to quickly analyze their spend across the entire organization.
+    - Responsible for the product back-end architecture including data loading automation, data loading mapping specifications, data extraction schemes, data cleansing process, data modeling, integration, customization mechanism.
+    - Designed a mechanism (XML description based) to allow customers to extend their data model to their needs. Customizations persist thru upgrades. Customizations go from schema extension, data loading instructions, to report definitions.
+    - Engineered data cleansing techniques (e.g. commodity and supplier classification) to enrich transactions (e.g. purchase orders, invoices) with addition valuable information.
+    - Turned the 5th version of the product into a software as a service (SaaS) targeted to smaller customers.
+    - Shipped 6 releases of Ariba Analysis that was implemented for over 35 customers generating over $55 million in revenue.
 
 - id: selectica
+  type: work
   title: Staff Engineer
   company: Selectica
-  period: 2000 - 2001
-  desc:
-  - Technical lead for a team between San Jose and India.
-  - Responsible for the product architecture, design, functionalities, quality and delivery. Acting as product manager to define software roadmap, product goals and project scope.
-  - Architected and developed a Decision Support System to analyze sales, configuration process, web visitor behavior, market trends, and consumers' buying behavior.
-  - Designed and implemented a data warehouse logical and physical data model for mass reporting. Developed data extraction from Selectica click stream logs to load into the data warehouse using Informatica PowerMart.
-  - Designed a user interface for report retrieval and management. Integration and automation of data collection, extraction and reports generation.
-  - Designed a metadata layer to manage the entire application data. The metadata is stored in a RDBMS and can be imported from/exported to XML format.
-  subway:
-    coords: '4,2'
-    label: W
+  date: { from: 2000, to: 2001 }
+  summary: Led the development of a new Business Intelligence product to analyze Selectica's configure process
+  description:
+    - Technical lead for a team between San Jose and India.
+    - Responsible for the product architecture, design, functionalities, quality and delivery. Acting as product manager to define software roadmap, product goals and project scope.
+    - Architected and developed a Decision Support System to analyze sales, configuration process, web visitor behavior, market trends, and consumers' buying behavior.
+    - Designed and implemented a data warehouse logical and physical data model for mass reporting. Developed data extraction from Selectica click stream logs to load into the data warehouse using Informatica PowerMart.
+    - Designed a user interface for report retrieval and management. Integration and automation of data collection, extraction and reports generation.
+    - Designed a metadata layer to manage the entire application data. The metadata is stored in a RDBMS and can be imported from/exported to XML format.
 
 - id: nec
+  type: work
   title: Sr. Research Associate
   company: NEC Computer & Communication Research Labs
-  company-abbr: NEC
-  period: 1998 - 1999
-  desc:
-  - Researched on web mining, information retrieval and knowledge/data management on hypertexts.
-  - Developed an advanced centralized web bookmark system, which allows bookmarks sharing, automatic categorization, grouping similar bookmarks, complex queries using WQL a like SQL language.
-  - Transferred the technology from PowerBookmarks prototype to NEC Software Division to be integrated with Web Content Manager product line. Obtained a research grant of $120,000 for this contribution.
-  - Led 6 software engineers for technology transfer. Mentored 3 graduate interns.
-  subway:
-    coords: '3,1'
-    label: N
-    dir: N
+  date: { from: 1998, to: 1999 }
+  summary: Research on semi-structured data mining and information retrieval.
+  description:
+    - Researched on web mining, information retrieval and knowledge/data management on hypertexts.
+    - Developed an advanced centralized web bookmark system, which allows bookmarks sharing, automatic categorization, grouping similar bookmarks, complex queries using WQL a like SQL language.
+    - Transferred the technology from PowerBookmarks prototype to NEC Software Division to be integrated with Web Content Manager product line. Obtained a research grant of $120,000 for this contribution.
+    - Led 6 software engineers for technology transfer. Mentored 3 graduate interns.
 
 - id: ibm
+  type: work
   title: Research Associate
   company: IBM Almaden Research Center
-  company-abbr: IBM
-  period: 1996 - 1998
-  desc:
-  - "Research on core data mining technology: association rules, sequential patterns, interactive classification and sparse high dimensional data clustering. Developed unique solutions, by leveraging IBM's data analysis and management capabilities, such as patents mining, and shape query and patterns overtime."
-  - Transferred the technology to IBM Intelligent Miner award-winning data mining suite.
-  - Developed tools to provide business intelligence to E-Commerce applications, such as web logs mining, which can be used for online ads targeting, and to provide tactical information to improve customer relationship management.
-  - Developed a suite of store analysis reporting tools "Internet Sales Predictor" that allows the merchants to identify hot sellers, loss leaders, potential cross selling opportunities.
-  subway:
-    coords: '2,1'
-    label: N
+  date: { from: 1996, to: 1998 }
+  summary: Research in Data Mining. Developed several internet sales tools based on Association Rules.
+  description:
+    - "Research on core data mining technology: association rules, sequential patterns, interactive classification and sparse high dimensional data clustering. Developed unique solutions, by leveraging IBM's data analysis and management capabilities, such as patents mining, and shape query and patterns overtime."
+    - Transferred the technology to IBM Intelligent Miner award-winning data mining suite.
+    - Developed tools to provide business intelligence to E-Commerce applications, such as web logs mining, which can be used for online ads targeting, and to provide tactical information to improve customer relationship management.
+    - Developed a suite of store analysis reporting tools "Internet Sales Predictor" that allows the merchants to identify hot sellers, loss leaders, potential cross selling opportunities.
 
 - id: crim
+  type: work
   title: Research Associate
   company: Computer Research Institute of Montreal
-  company-abbr: CRIM
-  period: 1995 - 1996
-  desc:
-  - Innovated and developed image processing and vision algorithms for map processing targeted to GIS applications.
-  - Integrated a fast image-warping algorithm to an electrical monitoring system at M3i Inc for map correction and vectorization.
-  - Developed a framework for creation and manipulation of intelligent autonomous agents communicating in KQML. Agents have learning capabilities and able to persist their knowledge at the termination time. Agents are created and manipulated through C++ or Java API.
-  subway:
-    coords: '1,2'
-    label: S
-    dir: W
+  date: { from: 1995, to: 1996 }
+  summary: Research on image processing for GIS map applications
+  description:
+    - Innovated and developed image processing and vision algorithms for map processing targeted to GIS applications.
+    - Integrated a fast image-warping algorithm to an electrical monitoring system at M3i Inc for map correction and vectorization.
+    - Developed a framework for creation and manipulation of intelligent autonomous agents communicating in KQML. Agents have learning capabilities and able to persist their knowledge at the termination time. Agents are created and manipulated through C++ or Java API.
 
-skills:
-- id: languages
-  title: Languages
-  list:
-  - Java, C/C++, Objective-C
-  - CSS3, HTML5
-  - Javascript, Node JS
-  - Perl, PHP, Shell Bash
-  subway:
-    coords: '8,4'
-    label: N
+- title: Java
+  date: { from: 1994 }
+  type: skill
 
-- id: databases
-  title: Databases
-  list:
-  - DB2
-  - MongoDB
-  - AWS SimpleDB, DynamoDB
-  - MySQL
-  - Oracle
-  subway:
-    coords: '9,3'
-    label: E
-    dir: E
+- title: C/C++
+  date: { from: 1992 }
+  type: skill
 
-- id: platforms
-  title: Platforms
-  list:
-  - AWS
-  - iOS
-  - Linux RHEL, Ubuntu
-  - Mac OSX
-  - Windows
-  subway:
-    coords: '10,2'
-    label: N
-    dir: N
+- title: PHP
+  date: { from: 2004 }
+  type: skill
 
-- id: technologies
-  title: Technologies and Tools
-  list:
-  - Bootstrap, LESS, SASS
-  - Loopback, MEAN.JS
-  - jQuery
-  - Symfony, CodeIgniter, Laravel MVC
-  - Zend Framework
-  - JEE (Geronimo, JBoss)
-  - XCode
-  - Git/Github, SVN, Perforce
-  - Jenkins/Hudson, Maven, Ant
-  - Ansible, Puppet, Chef
-  subway:
-    coords: '11,2'
-    label: S
+- title: Linux, Javascript, CSS, HTML
+  date: { from: 2002 }
+  type: skill
 
-education:
+- title: Oracle
+  date: { from: 1998 }
+  type: skill
+
+- title: AWS DynamoDB
+  date: { from: 2015 }
+  type: skill
+
+- title: MySQL
+  date: { from: 2005 }
+  type: skill
+
+- title: PostgresQL
+  date: { from: 2010 }
+  type: skill
+
+- title: AWS
+  date: { from: 2009 }
+  type: skill
+
+- title: MongoDB, Node JS, Ansible, Chef
+  date: { from: 2014 }
+  type: skill
+
 - id: ms
+  type: education
   degree: Master in Science - Computer Science
-  degree-abbr: M.S.
   institution: Univeristy of Montreal
   location: Canada
-  period: 1993 - 1996
-  subway:
-    coords: '7,5'
-    label: S
-    dir: S
+  date: { from: 1993, to: 1996 }
 
 - id: bs
+  type: education
   degree: Bachelor in Science - Computer Science
-  degree-abbr: B.S.
   institution: Univeristy of Montreal
   location: Canada
-  period: 1990 - 1993
-  subway:
-    coords: '8,5'
-    label: S
+  date: { from: 1990, to: 1993 }
 
 - id: math
+  type: education
   degree: Mathematics Superior
-  degree-abbr: Math
   institution: Kleber College
   location: France
-  period: 1988 - 1990
-  subway:
-    coords: '9,6'
-    label: S
-    dir: E
+  date: { from: 1988, to: 1990 }
 
-papers:
-  patents:
-  - author: Quoc Vu, Okan Kolak, Wen-Syan Li,
-    title: Method of Defining and Utilizing Logical Domains to Partition and to Reorganize Physical Domains
-    number: U.S. Patent 6,647,381
-    issued_at: November 2003
+- author: Quoc Vu, Okan Kolak, Wen-Syan Li,
+  title: Method of Defining and Utilizing Logical Domains to Partition and to Reorganize Physical Domains
+  number: U.S. Patent <a href="https://www.google.com/patents/US6647381">6,647,381</a>
+  issued_at: November 2003
+  date: { from: 2003 }
+  type: publication
 
-  - author: Quoc Vu, Wen-Syan Li
-    title: System for Personalizing, Organizing and Managing Web Information
-    number: U.S. Patent 6,631,496
-    issued_at: October 2003
+- author: Quoc Vu, Wen-Syan Li
+  title: System for Personalizing, Organizing and Managing Web Information
+  number: U.S. Patent <a href="https://www.google.com/patents/US6631496">6,631,496</a>
+  issued_at: October 2003
+  date: { from: 2003 }
+  type: publication
 
-  - author: Quoc Vu, Wen-Syan Li, Edward Chang
-    title: Personalized Navigation Trees
-    number: U.S. Patent 6,393,427
-    issued_at: May 2001
+- author: Quoc Vu, Wen-Syan Li, Edward Chang
+  title: Personalized Navigation Trees
+  number: U.S. Patent <a href="https://www.google.com/patents/US6393427">6,393,427</a>
+  issued_at: May 2001
+  date: { from: 2001 }
+  type: publication
 
-  - author: Quoc Vu, Ramakrishnan Srikant, Rakesh Agrawal
-    title: Method and apparatus for mining association rules having item constraints
-    number: U.S. Patent 6,061,682
-    issued_at: May 2000
+- author: Quoc Vu, Ramakrishnan Srikant, Rakesh Agrawal
+  title: Method and apparatus for mining association rules having item constraints
+  number: U.S. Patent <a href="https://www.google.com/patents/US6061682">6,061,682</a>
+  issued_at: May 2000
+  date: { from: 2000 }
+  type: publication
 
-  - author: Quoc Vu, Wen-Syan Li, Okan Kolak
-    title: Topic-Focused Site Maps
-    number: U.S. Patent Application Pending
+- author: Quoc Vu, Wen-Syan Li
+  title: Exploring Link Topology for Associating Web Pages
+  journal: International Journal of Knowledge and Information Systems, Springer-Verlag, 2003.
+  date: { from: 2003 }
+  type: publication
 
-  - author: Quoc Vu, Wen-Syan Li
-    title: Advanced Web Bookmark Database System
-    number: U.S. Patent Application Pending
+- author: Quoc Vu, Wen-Syan Li, Selcuk Candan, Divyakant Agrawal
+  title: Query Relaxation by Structure and Semantics for Retrieval of Logical Web Documents
+  journal: IEEE Transactions on Knowledge and Data Engineering, Vol 14(4), IEEE, 2001.
+  date: { from: 2001 }
+  type: publication
 
-  journals:
-  - author: Quoc Vu, Wen-Syan Li
-    title: Exploring Link Topology for Associating Web Pages
-    journal: International Journal of Knowledge and Information Systems, Springer-Verlag, 2003.
+- author: Quoc Vu, Wen-Syan Li, Selcuk Candan, Divyakant Agrawal
+  title: Logical Document Retrieval by 'Information Unit'
+  journal: International Journal of Knowledge and Information Systems, Springer-Verlag, 2003.
+  date: { from: 2003 }
+  type: publication
 
-  - author: Quoc Vu, Wen-Syan Li, Selcuk Candan, Divyakant Agrawal
-    title: Query Relaxation by Structure and Semantics for Retrieval of Logical Web Documents
-    journal: IEEE Transactions on Knowledge and Data Engineering, Vol 14(4), IEEE, 2001.
+- author: Quoc Vu, Wen-Syan Li, Edward Chang
+  title: Personalization of Web Document Organization
+  journal: International Journal of Knowledge and Information Systems, Springer-Verlag, 2003.
+  date: { from: 2003 }
+  type: publication
 
-  - author: Quoc Vu, Wen-Syan Li, Selcuk Candan, Divyakant Agrawal
-    title: Logical Document Retrieval by 'Information Unit'
-    journal: International Journal of Knowledge and Information Systems, Springer-Verlag, 2003.
+- author: Quoc Vu, Wen-Syan Li, Divyakant Agrawal, Yoshinori Hara, and Hajime Takano
+  title: "PowerBookmarks: A System for Personalizable Web Information Organization, Sharing, and Management"
+  journal: Computer Networks, The International Journal of Computer and Telecommunications Networking, Elsvier Science, Vol 31(11-16), 1375-1389, 1999.
+  date: { from: 1999 }
+  type: publication
 
-  - author: Quoc Vu, Wen-Syan Li, Edward Chang
-    title: Personalization of Web Document Organization
-    journal: International Journal of Knowledge and Information Systems, Springer-Verlag, 2003.
+- author: Quoc Vu, Wen-Syan Li, Selcuk Candan, Divyakant Agrawal
+  title: Retrieval and Organization of Web Documents by Information Unit
+  conference: Proceedings of 10th World Wide Web Conference, Hong Kong, China, May 2001.
+  date: { from: 2001 }
+  type: publication
 
-  - author: Quoc Vu, Wen-Syan Li, Divyakant Agrawal, Yoshinori Hara, and Hajime Takano
-    title: "PowerBookmarks: A System for Personalizable Web Information Organization, Sharing, and Management"
-    journal: Computer Networks, The International Journal of Computer and Telecommunications Networking, Elsvier Science, Vol 31(11-16), 1375-1389, 1999.
+- author: Quoc Vu, Wen-Syan Li, Necip Fazil Ayan, Okan Kolak
+  title: Constructing Multi-Granular and Topic-Focused Web Site Maps
+  conference: Proceedings of 10th World Wide Web Conference, Hong Kong, China, May 2001.
+  date: { from: 2001 }
+  type: publication
 
-  conferences:
-  - author: Quoc Vu, Wen-Syan Li, Selcuk Candan, Divyakant Agrawal
-    title: Retrieval and Organization of Web Documents by Information Unit
-    conference: Proceedings of 10th World Wide Web Conference, Hong Kong, China, May 2001.
+- author: Quoc Vu, Wen-Syan Li
+  title: Exploring Link Topology for Associating Web Pages
+  conference: Proceedings of the 9th International Conference on World Wide Web, Amsterdam, Netherlands, 2000.
+  date: { from: 2000 }
+  type: publication
 
-  - author: Quoc Vu, Wen-Syan Li, Necip Fazil Ayan, Okan Kolak
-    title: Constructing Multi-Granular and Topic-Focused Web Site Maps
-    conference: Proceedings of 10th World Wide Web Conference, Hong Kong, China, May 2001.
+- author: Quoc Vu, Wen-Syan Li, Okan Kolak, Hajime Takano
+  title: Defining Logical Domains in a Web Site
+  conference: Proceedings of ACM Hypertext Conference 2000, San Antonio, Texas, USA, 2000.
+  date: { from: 2000 }
+  type: publication
 
-  - author: Quoc Vu, Wen-Syan Li
-    title: Exploring Link Topology for Associating Web Pages
-    conference: Proceedings of the 9th International Conference on World Wide Web, Amsterdam, Netherlands, 2000.
+- author: Quoc Vu, Wen-Syan Li, Edward Chang
+  title: On Constructing Personalized Navigation Trees for Web Documents
+  conference: Proceedings of the 8th International Conference on World Wide Web, Toronto, Canada, 1999.
+  date: { from: 1999 }
+  type: publication
 
-  - author: Quoc Vu, Wen-Syan Li, Okan Kolak, Hajime Takano
-    title: Defining Logical Domains in a Web Site
-    conference: Proceedings of ACM Hypertext Conference 2000, San Antonio, Texas, USA, 2000.
+- author: Quoc Vu, Wen-Syan Li, Divyakant Agrawal, Yoshinori Hara, Hajime Takano
+  title: "PowerBookmarks: A System for Personalizable Web Information Organization, Sharing, and Management"
+  conference: Proceedings of the 8th International Conference on World Wide Web, Toronto, Canada, 1999.
+  date: { from: 1999 }
+  type: publication
 
-  - author: Quoc Vu, Wen-Syan Li, Edward Chang
-    title: On Constructing Personalized Navigation Trees for Web Documents
-    conference: Proceedings of the 8th International Conference on World Wide Web, Toronto, Canada, 1999.
+- author: Quoc Vu, Wen-Syan Li, Edward Chang, Divyakant Agrawal, Kyoji Hirata, Sougata Mukherjea, Yi-Leh Wu, Corey Bufi, Chen-Chuan K. Chang, Yoshinori Hara, Reiko Ito, Yutaka Kimura, Kazuyuki Shimazu, Yukiyoshi Saito
+  title: "PowerBookmarks: A System for Personalizable Web Information Organization, Sharing, and Management"
+  conference: Proceedings of ACM SIGMOD International Conference on Management of Data, Philadelphia, Pennsylvania, USA, 1999.
+  date: { from: 1999 }
+  type: publication
 
-  - author: Quoc Vu, Wen-Syan Li, Divyakant Agrawal, Yoshinori Hara, Hajime Takano
-    title: "PowerBookmarks: A System for Personalizable Web Information Organization, Sharing, and Management"
-    conference: Proceedings of the 8th International Conference on World Wide Web, Toronto, Canada, 1999.
+- author: Quoc Vu, Ramakrishnan Srikant, Rakesh Agrawal
+  title: Mining Association Rules with Item Constraints
+  conference: Proceedings of the 3rd International Conference on Knowledge Discovery and Data Mining, Newport Beach, California, USA, 1997.
+  date: { from: 1997 }
+  type: publication
 
-  - author: Quoc Vu, Wen-Syan Li, Edward Chang, Divyakant Agrawal, Kyoji Hirata, Sougata Mukherjea, Yi-Leh Wu, Corey Bufi, Chen-Chuan K. Chang, Yoshinori Hara, Reiko Ito, Yutaka Kimura, Kazuyuki Shimazu, Yukiyoshi Saito
-    title: "PowerBookmarks: A System for Personalizable Web Information Organization, Sharing, and Management"
-    conference: Proceedings of ACM SIGMOD International Conference on Management of Data, Philadelphia, Pennsylvania, USA, 1999.
-
-  - author: Quoc Vu, Ramakrishnan Srikant, Rakesh Agrawal
-    title: Mining Association Rules with Item Constraints
-    conference: Proceedings of the 3rd International Conference on Knowledge Discovery and Data Mining, Newport Beach, California, USA, 1997.
-
-  - author: Quoc Vu, Ying Li
-    title: A Fast Warping Algorithm for Correcting Local Distortions in Binary Images
-    conference: Proceedings of the International Conference on Image Processing 96, Lausanne, Switzerland, 1996.
-
-
+- author: Quoc Vu, Ying Li
+  title: A Fast Warping Algorithm for Correcting Local Distortions in Binary Images
+  conference: Proceedings of the International Conference on Image Processing 96, Lausanne, Switzerland, 1996.
+  date: { from: 1996 }
+  type: publication

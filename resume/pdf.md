@@ -5,57 +5,41 @@ tags: [quoc vu, resume, skill, experience, education]
 modified: 2014-08-08T20:53:07.573882-04:00
 ---
 
+
 ## Summary
 
 {% for summary in site.data.resume.summary %}
 * {{ summary }}{% endfor %}
 
-# Experience
+## Experience
 
-{% for exp in site.data.resume.experience %}
+{% assign events = site.data.resume.events | sort: 'date.from' | reverse %}
+{% for event in events %}
+  {% if event.type == 'work' %}
+#### {{ event.date.from }} - {{ event.date.to }}: {{ event.title }} @{{ event.company }}
 
-## {{ exp.title }} @ {{ exp.company }}
-
-{{ exp.period }}
-
-{% for desc in exp.desc %}
-* {{ desc }}{% endfor %}
-
+    {% if event.summary %}
+{{ event.summary }}
+    {% else %}
+      {% for i in event.description %}
+* {{ i }}{% endfor %}      
+    {% endif %}
+  {% endif %}      
 {% endfor %}
 
-# Technical Skills
+## Education
 
-{% for skill in site.data.resume.skills %}
+{% for event in events %}{% if event.type == 'education' %}
+* {{ event.date.to }}: {{ event.degree }}, {{ event.institution }}{% endif %}    {% endfor %}
 
-## {{ skill.title }}
+## Technical Skills
 
-{% for i in skill.list %}
-* {{ i }}{% endfor %}
+{% for event in events %}{% if event.type == 'skill' %}
+* {{ event.date.from }}: {{ event.title }}{% endif %}{% endfor %}
 
-{% endfor %}
 
-# Education
+## Patents and Publications
 
-{% for edu in site.data.resume.education %}
-## {{ edu.degree }}
-@ {{ edu.institution }}
-{{ edu.location }}
-{{ edu.period }}
-{% endfor %}
-
-# Patents and Publications
-
-## Patents
-
-{% for p in site.data.resume.papers.patents %}
-* {{ p.author }}, "{{ p.title }}", {{ p.number }}, {{ p.issued_at }}{% endfor %}
-
-## Journal Articles
-
-{% for p in site.data.resume.papers.journals %}
-* {{ p.author }}, "{{ p.title }}", in {{ p.journal }}{% endfor %}
-
-## Conference Papers
-
-{% for p in site.data.resume.papers.conferences %}
-* {{ p.author }}, "{{ p.title }}", in {{ p.conference }}{% endfor %}
+* 4 Patents issued
+* 5 Journal papers
+* 9 Conference papers

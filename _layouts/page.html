@@ -32,7 +32,7 @@
   <div class="article-author-side">
     {% include _author-bio.html %}
   </div>
-  <article class="page">
+  <article class="page" {% if page.width != false %}style="width:{{ page.width }}"{% endif %}>
     <h1>{{ page.title }}</h1>
     <div class="article-wrap">
       {{ content }}
@@ -53,7 +53,7 @@
   </footer>
 </div><!-- /.footer-wrap -->
 
-{% include _scripts.html %}          
+{% include _scripts.html %}
 
 </body>
 </html>
