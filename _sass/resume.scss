@@ -6,80 +6,44 @@
   }
 }
 
-/* subway visualization */
-#instructions {
-  margin: 25px auto 5px;
-  color: #999;
-  font-style: italic;
-  width: 720px;
-}
+body.resume-print {
+  font: normal 12px 'PT Serif', serif;
 
-#subway-map {
-  margin: 0 auto 25px;
-  width: 720px;
-  height:480px;
-  background-color: white;
-  border-radius: 10px;
-  border: solid 10px #eee;
+  #header {
+    border-bottom: 10px solid #3d557c;
+    clear: both;
+    height: 150px;
 
-  span {
-    margin: 5px 5px 5px 0;
-  }
-}
-
-/* Text labels */
-.text {
-  text-decoration: none;
-  color: black;
-  font: normal 12pt Verdana, Monaco, sans-serif;
-}
-
-.text:hover {
-  text-decoration: none;
-  font-weight: bold;
-}
-
-#legend {
-  margin: 0 auto;
-  width: 720px;
-  height:400px;
-  font: normal 10pt Verdana, Monaco, sans-serif;
-
-  div {
-    height: 25px;
-  }
-
-  span {
-    margin: 5px 5px 5px 0;
-  }
-}
-
-.webui-popover-inner {
-  font: normal 10pt Arial, Monaco, sans-serif;
-
-  > .webui-popover-title {
-    > p {
-      margin: 0;
+    .contact-info {
+      float: left;
+      overflow:hidden;
+      width: 60%;
     }
 
-    > .job-title {
-      font-weight: bold;
-    }      
-
-    > .company {
-      font-weight: normal;
+    #qrcode {
+      padding: 15px;
     }
 
-    > .period {
-      font-weight: normal;
+    img {
+      height: 120px;
+      width: 120px;
+    }
+
+    h1 {
+       font-size: 20px;
     }
   }
 
-  > .webui-popover-content > ul {
-    margin: 0;
-    padding-left: 12px;
+  #main {
+    margin-top: 0;
 
-    li {
+    h2 {
+      font-size: 18px;
+      margin-bottom: 0;
+    }
+
+    h4 {
+      font-size: 14px;
       margin-bottom: 5px;
     }
   }

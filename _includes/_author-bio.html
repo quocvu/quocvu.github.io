@@ -33,13 +33,7 @@
   {% if author.flickr %}<a href="http://www.flickr.com/{{ author.flickr }}" class="author-social" target="_blank"><i class="fa fa-fw fa-flickr"></i> Flickr</a>{% endif %}
 </div>
 
-{% if page.resume == 'visual' %}
-<div class="resume">
-<a class="btn" href="/resume/print.html">Printable Copy</a>
-</div>
-{% endif %}
-
-{% if page.resume == 'print' %}
+{% if page.url == '/resume/' %}
 <div class="resume">
 <a class="btn" href="/quoc-vu-resume.pdf">Download PDF</a>
 </div>
