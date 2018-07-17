@@ -12,12 +12,18 @@ events:
   company: SAP Ariba
   date: { from: 2016, to: Present }
   description:
+    - Led multiple agile scrum teams (Dev and QA) across 3 locations (US, India, China)
     - Led the development of XML database and Queueing as service
-    - Led the migration of flagship Buyer and Sourcing apps from Oracle to HANA
+    - Migrated Ariba flagship apps (Buyer and Sourcing) from Oracle to SAP HANA (in memory DB)
+    - Revamping Ariba test infrastructure for public cloud readiness
     - Enabled first Ariba application to run on public clouds (AWS & Azure)
-    - Converted the on premise CI/CD into an elastic cloud based app running on public clouds
+    - Converted the on premise CI/CD pipeline into an elastic app running on multiple public clouds
     - Advocate for Agile adoption and coaching team for Agile transformation
     - Active member of the Palo Alto Sustainability team
+
+- title: SAP Hana
+  date: { from: 2016 }
+  type: skill
 
 - id: intuit
   type: work
