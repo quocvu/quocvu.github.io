@@ -21,10 +21,6 @@ events:
     - Advocate for Agile adoption and coaching team for Agile transformation
     - Active member of the Palo Alto Sustainability team
 
-- title: SAP Hana
-  date: { from: 2016 }
-  type: skill
-
 - id: intuit
   type: work
   title: Principal Engineer
@@ -187,6 +183,14 @@ events:
 
 - title: MongoDB, Node JS, Ansible, Chef
   date: { from: 2014 }
+  type: skill
+
+- title: Kafka, Docker
+  date: { from: 2015 }
+  type: skill
+
+- title: SAP Hana
+  date: { from: 2016 }
   type: skill
 
 - id: ms
