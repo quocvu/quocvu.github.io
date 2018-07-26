@@ -165,10 +165,6 @@ events:
   date: { from: 1998 }
   type: skill
 
-- title: AWS DynamoDB
-  date: { from: 2015 }
-  type: skill
-
 - title: MySQL
   date: { from: 2005 }
   type: skill
@@ -185,7 +181,7 @@ events:
   date: { from: 2014 }
   type: skill
 
-- title: Kafka, Docker
+- title: Kafka, Docker, AWS DynamoDB
   date: { from: 2015 }
   type: skill
 
