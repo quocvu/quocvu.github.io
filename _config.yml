@@ -2,10 +2,10 @@
 
 title: Quoc's Corner
 locale: en_US
-url: 'http://quocvu.github.io'
+url: 'https://quocvu.github.io'
 email: darthvu@gmail.com
-twitter_username: #username
-github_username:  #username
+twitter_username: quocvu
+github_username:  quocvu
 
 # Jekyll configuration
 
@@ -14,7 +14,7 @@ highlighter: rouge
 sass:
   sass_dir: _sass
   style: compressed
-gems:
+plugins:
   - github-pages
   - jekyll-sitemap
   - rouge
@@ -37,7 +37,7 @@ owner:
   twitter: #username
   facebook: #username
   google:
-    plus: #username
+    plus: 
     analytics:
     verify:
     ad-client:

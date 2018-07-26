@@ -1,0 +1,211 @@
+@import "vendor/bourbon/bourbon";
+
+// variables - colors
+
+$main-text: #7f8c97; // main text
+$link: #acb7c0; // anchor tags
+$background: #e9f0f5; // body background color
+
+$color-1: #303e49; // blue dark
+$color-2: #c03b44; // red
+$color-3: #ffffff; // white
+$color-4: #75ce66; // green
+$color-5: #f0ca45; // yellow
+$color-6: #55aaff; // blue
+
+// variables - fonts
+
+$primary-font: 'Droid Serif', serif;
+$secondary-font: 'Open Sans', sans-serif;
+
+// mixins - rem fallback - credits: http://zerosixthree.se/
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+// mixins - border radius
+
+@mixin border-radius($radius:.25em) {
+  border-radius: $radius;
+}
+
+// layout - breakpoints
+
+$S:     320px;
+$M:     768px;
+$L:     1170px;
+
+// layout - media queries
+
+@mixin MQ($canvas) {
+  @if $canvas == S {
+    @media only screen and (min-width: $S) { @content; }
+  }
+  @else if $canvas == M {
+    @media only screen and (min-width: $M) { @content; }
+  }
+  @else if $canvas == L {
+    @media only screen and (min-width: $L) { @content; }
+  }
+}
+
+/* --------------------------------
+
+Modules - reusable parts of our design
+
+-------------------------------- */
+
+.cd-container { /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+  margin: 0 0 0 80px;
+
+  &::after { /* clearfix */
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+/* --------------------------------
+
+Main components
+
+-------------------------------- */
+
+#cd-timeline {
+  position: relative;
+  padding: 2em 0;
+  margin: {
+    top: 2em;
+    bottom: 2em;
+  }
+
+  &::before {
+    /* this is the vertical line */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 18px;
+    height: 100%;
+    width: 4px;
+    background: darken($background, 5%);
+  }
+}
+
+.cd-timeline-block {
+  position: relative;
+  margin: 2em 0;
+  @include clearfix;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  h2 {
+    @include font-size(20px);
+  }
+}
+
+.cd-date {
+  position: absolute;
+  left: -65px;
+  text-align: right;
+  top: 0;
+}
+
+.cd-timeline-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px $color-3, inset 0 2px 0 rgba(#000, .08), 0 3px 0 4px rgba(#000, .05) ;
+
+  img {
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    margin-left: -12px;
+    margin-top: -12px;
+  }
+
+  &.cd-work {
+    background: $color-4;
+  }
+
+  &.cd-education {
+    background: $color-2;
+  }
+
+  &.cd-publication {
+    background: $color-6;
+  }
+
+  &.cd-skill {
+    background: $color-5;
+  }
+}
+
+.cd-timeline-content {
+  position: relative;
+  margin-left: 60px;
+  background: #eee;
+  @include border-radius;
+  padding: 1em;
+  box-shadow: 0 3px 0 darken($background, 5%);
+  @include clearfix;
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .cd-read-more, .cd-read-less, .cd-date {
+    display: inline-block;
+  }
+
+  p {
+    margin: 1em 0;
+    line-height: 1.6;
+  }
+
+  .cd-read-more, .cd-read-less {
+    font-weight: normal;
+    float: right;
+    padding: 5px 8px;
+    background: $link;
+    color: $color-3;
+    @include border-radius;
+    @include font-size(16px);
+
+    .no-touch &:hover {
+      background-color: lighten($link, 5%);
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 16px;
+    right: 100%;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-right: 7px solid #eee;
+  }
+
+}
