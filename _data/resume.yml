@@ -8,7 +8,7 @@ summary:
 events:
 - id: sap-ariba
   type: work
-  title: Sr Engineering Manager
+  title: Director of Engineering 
   company: SAP Ariba
   date: { from: 2016, to: Present }
   description:
