@@ -322,8 +322,4 @@ events:
   date: { from: 1996 }
   type: publication
 
-- author: Quoc Vu et a.l.
-  title: Conclusion Multimedia Client File Servers Multimedia Transport System Negotiation at the Client Side
-  conference: 
-  date: { from: 1995 }
-  type: publication
+
