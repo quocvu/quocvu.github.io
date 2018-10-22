@@ -12,14 +12,14 @@ events:
   company: SAP Ariba
   date: { from: 2016, to: Present }
   description:
-    - Led multiple agile scrum teams (Dev and QA) across 3 locations (US, India, China)
-    - Led the development of XML database and Queueing as service
-    - Migrated Ariba flagship apps (Buyer and Sourcing) from Oracle to SAP HANA (in memory DB)
-    - Revamping Ariba test infrastructure for public cloud readiness
-    - Enabled first Ariba application to run on public clouds (AWS & Azure)
-    - Converted the on premise CI/CD pipeline into an elastic app running on multiple public clouds
-    - Advocate for Agile adoption and coaching team for Agile transformation
-    - Active member of the Palo Alto Sustainability team
+    - Led multiple agile scrum teams (Dev and QA) across 4 locations (US, India, China).
+    - Led the development of XML database and Queueing as service.
+    - Migrated Ariba flagship apps (Buyer and Sourcing) from Oracle to SAP HANA (in memory DB).
+    - Revamping Ariba test infrastructure for public cloud readiness.
+    - Enabled first Ariba application to run on public clouds (AWS & Azure).
+    - Converted the on premise CI/CD pipeline into an elastic app running on multiple public clouds.
+    - Advocate for Agile adoption and coaching teams for Agile transformation.
+    - Active member of the Palo Alto Sustainability team.
 
 - id: intuit
   type: work
@@ -192,14 +192,14 @@ events:
 - id: ms
   type: education
   degree: Master in Science - Computer Science
-  institution: Univeristy of Montreal
+  institution: University of Montreal
   location: Canada
   date: { from: 1993, to: 1996 }
 
 - id: bs
   type: education
   degree: Bachelor in Science - Computer Science
-  institution: Univeristy of Montreal
+  institution: University of Montreal
   location: Canada
   date: { from: 1990, to: 1993 }
 
