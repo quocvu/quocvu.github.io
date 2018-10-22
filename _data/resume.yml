@@ -139,7 +139,7 @@ events:
   title: Research Associate
   company: Computer Research Institute of Montreal
   date: { from: 1995, to: 1996 }
-  summary: Research on image processing for GIS map applications
+  summary: Research in Image Processing for GIS applications
   description:
     - Innovated and developed image processing and vision algorithms for map processing targeted to GIS applications.
     - Integrated a fast image-warping algorithm to an electrical monitoring system at M3i Inc for map correction and vectorization.
