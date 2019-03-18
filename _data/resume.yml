@@ -189,6 +189,10 @@ events:
   date: { from: 2016 }
   type: skill
 
+- title: HashiCorp Nomad, Consul, Terraform
+  date: { from: 2016 }
+  type: skill
+
 - id: ms
   type: education
   degree: Master in Science - Computer Science
