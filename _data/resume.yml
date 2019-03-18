@@ -6,6 +6,54 @@ summary:
 - Sharp product vision, innovation, execution, and strong and diverse technology experience.
 
 events:
+- title: Java
+  date: { from: 1994 }
+  type: skill
+
+- title: C/C++
+  date: { from: 1992 }
+  type: skill
+
+- title: PHP
+  date: { from: 2004 }
+  type: skill
+
+- title: Linux, Javascript, CSS, HTML
+  date: { from: 2002 }
+  type: skill
+
+- title: Oracle
+  date: { from: 1998 }
+  type: skill
+
+- title: MySQL
+  date: { from: 2005 }
+  type: skill
+
+- title: PostgresQL
+  date: { from: 2010 }
+  type: skill
+
+- title: AWS
+  date: { from: 2009 }
+  type: skill
+
+- title: MongoDB, Node JS, Ansible, Chef
+  date: { from: 2014 }
+  type: skill
+
+- title: Kafka, Docker, AWS DynamoDB
+  date: { from: 2015 }
+  type: skill
+
+- title: SAP Hana
+  date: { from: 2016 }
+  type: skill
+
+- title: HashiCorp Nomad, Consul, Terraform
+  date: { from: 2016 }
+  type: skill
+
 - id: sap-ariba
   type: work
   title: Director of Engineering 
@@ -144,54 +192,6 @@ events:
     - Innovated and developed image processing and vision algorithms for map processing targeted to GIS applications.
     - Integrated a fast image-warping algorithm to an electrical monitoring system at M3i Inc for map correction and vectorization.
     - Developed a framework for creation and manipulation of intelligent autonomous agents communicating in KQML. Agents have learning capabilities and able to persist their knowledge at the termination time. Agents are created and manipulated through C++ or Java API.
-
-- title: Java
-  date: { from: 1994 }
-  type: skill
-
-- title: C/C++
-  date: { from: 1992 }
-  type: skill
-
-- title: PHP
-  date: { from: 2004 }
-  type: skill
-
-- title: Linux, Javascript, CSS, HTML
-  date: { from: 2002 }
-  type: skill
-
-- title: Oracle
-  date: { from: 1998 }
-  type: skill
-
-- title: MySQL
-  date: { from: 2005 }
-  type: skill
-
-- title: PostgresQL
-  date: { from: 2010 }
-  type: skill
-
-- title: AWS
-  date: { from: 2009 }
-  type: skill
-
-- title: MongoDB, Node JS, Ansible, Chef
-  date: { from: 2014 }
-  type: skill
-
-- title: Kafka, Docker, AWS DynamoDB
-  date: { from: 2015 }
-  type: skill
-
-- title: SAP Hana
-  date: { from: 2016 }
-  type: skill
-
-- title: HashiCorp Nomad, Consul, Terraform
-  date: { from: 2016 }
-  type: skill
 
 - id: ms
   type: education
