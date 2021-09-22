@@ -62,7 +62,7 @@ events:
   description:
     - Led multiple agile scrum teams (Dev and QA) across 4 locations (US, India, China, Brazil).
     - Led the development of XML database and Queueing as service.
-    - Migrated Ariba flagship products (Buyer and Sourcing) from Oracle to SAP HANA (in memory DB). Ariba is today the biggest deployment of SAP HANA.
+    - Successfully migrated Ariba products from Oracle to SAP HANA with little customer impact. Ariba is today the biggest deployment of SAP HANA.
     - Extended ORM layer to support SAP HANA. Implemented new application simulation tools.
     - Revamping Ariba test infrastructure for public cloud readiness.
     - Enabled first Ariba application to run on public clouds (AWS & Azure).
