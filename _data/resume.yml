@@ -1,6 +1,6 @@
 summary:
 - A collaborative, values based leader and problem solver with a proven track record of delivering new v1.0 products.
-- Hands-on experience and pragmatic entrepreneurial leadership with a "get the work done" attitude.
+- Hands-on experience and pragmatic leadership with a "get the work done" attitude.
 - Extensive experience in building teams from ground up and setting agile development structure and processes for geographically distributed teams.
 - Value based manager with strong leadership skills that engender team loyalty, passion and dedication.
 - Sharp product vision, innovation, execution, and strong and diverse technology experience.
@@ -62,11 +62,13 @@ events:
   description:
     - Led multiple agile scrum teams (Dev and QA) across 4 locations (US, India, China, Brazil).
     - Led the development of XML database and Queueing as service.
-    - Migrated Ariba flagship apps (Buyer and Sourcing) from Oracle to SAP HANA (in memory DB).
+    - Migrated Ariba flagship products (Buyer and Sourcing) from Oracle to SAP HANA (in memory DB). Ariba is today the biggest deployment of SAP HANA.
+    - Extended ORM layer to support SAP HANA. Implemented new application simulation tools.
     - Revamping Ariba test infrastructure for public cloud readiness.
     - Enabled first Ariba application to run on public clouds (AWS & Azure).
     - Converted the on premise CI/CD pipeline into an elastic app running on multiple public clouds.
-    - Led data privacy and data encryption security initiatives for Sourcing applications.
+    - Led data privacy, data protection, data encryption management for security initiatives for Ariba applications.
+    - Actively coordinating the phased DB migration and adoption of new security standards across all products.
     - Advocate for Agile adoption and coaching teams for Agile transformation.
     - Active member of the Palo Alto Sustainability team.
 
@@ -87,13 +89,12 @@ events:
 - id: xcommerce
   type: work
   title: Member of Technical Staff 2
-  company: X.Commerce
+  company: X.Commerce (an Ebay/PayPal division)
   date: { from: 2012, to: 2014 }
-  summary: Bootstraped new product initiatives to expand X.commerce's offerings.
+  summaryXXX: Bootstraped new product initiatives to expand X.commerce's offerings.
   description:
-    - Responsible for bootstrapping new initiatives within the company to expand the product line and/or improve work productivity.
-    - Created an employee portal allowing for higher social interaction and better individual objectives alignment.
-    - Innovated a point of sales iOS application for a Magento store.
+    - Responsible for bootstrapping new initiatives within the company to expand our product offerings.
+    - Developed a point of sales iOS application for a Magento store.
     - Developed an iOS application to administrate a Magento store.
     - Designed and developed a new unified API and Service framework enabling SOAP and REST interfaces for Magento services.
 
@@ -119,10 +120,10 @@ events:
   title: Senior Architect / Engineering Manager
   company: PayPal
   date: { from: 2004, to: 2008 }
-  summary: Led the development and launch of many key products including Funding Mix, Consumer experience, customer service tools, marketing platform, merchant risk
+  summaryXXX: Led the development and launch of many key products including Funding Mix, Consumer experience, customer service tools, marketing platform, merchant risk
   description:
-    - "Led several teams during my tenure covering different business areas: Funding Mix, Consumer Experience, Customer Service, Marketing Platform, Merchant Risk Assessment and Management."
-    - Teams are distributed between California, Arizona, and India. Formed and groomed 3 new teams.
+    - "Led several teams from different business areas: Funding Mix, Consumer Experience, Customer Service, Marketing Platform, Merchant Risk Assessment and Management."
+    - Managed distributed teams between California, Arizona, and India. Formed and groomed 3 new teams.
     - Responsible for architecture and technical design as well as project delivery and quality. Review, advise, and guide the technical design process. Enforce best practices in application development. Mentor and coach engineers for career growth as well as general people/team management activities.
     - Drive implementation of multiple simultaneous projects with a short 1-2 month development cycle. Hands-on project and resource management. Create and maintain project plan, tasks list, features list, bugs list. Assess risk mitigation.
     - Actively participate in defining road map for business units. Strategic planning to align business vision to system evolution. Work closely with 7 product managers simultaneously to define product features and priorities. Evaluate and review 3rd party applications.
@@ -150,7 +151,7 @@ events:
   title: Staff Engineer
   company: Selectica
   date: { from: 2000, to: 2001 }
-  summary: Led the development of a new Business Intelligence product to analyze Selectica's configure process
+  summary: Led the development of a new Business Intelligence product to analyze Selectica's configuration process
   description:
     - Technical lead for a team between San Jose and India.
     - Responsible for the product architecture, design, functionalities, quality and delivery. Acting as product manager to define software roadmap, product goals and project scope.
