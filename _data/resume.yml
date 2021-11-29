@@ -66,7 +66,7 @@ events:
     - Extended ORM layer to support SAP HANA. Implemented new application simulation tools.
     - Revamping Ariba test infrastructure for public cloud readiness.
     - Enabled first Ariba application to run on public clouds (AWS & Azure).
-    - Converted the on premise CI/CD pipeline into an elastic app running on multiple public clouds.
+    - Converted the on-premise CI/CD pipeline into an elastic app running on multiple public clouds.
     - Led data privacy, data protection, data encryption management for security initiatives for Ariba applications.
     - Actively coordinating the phased DB migration and adoption of new security standards across all products.
     - Advocate for Agile adoption and coaching teams for Agile transformation.
@@ -78,13 +78,13 @@ events:
   company: Intuit
   date: { from: 2014, to: 2016 }
   description:
-    - Led the development of a Continuous Integration and Continuous Delivery (CI/CD) company wide platform on AWS CodePipeline.
-    - Led the conversion of an existing Contiuous Delivery application into multi-tenant SAS based application.
+    - Led the development of a Continuous Integration and Continuous Delivery (CI/CD) company-wide platform on AWS CodePipeline.
+    - Led the conversion of an existing Continuous Delivery application into multi-tenant SAS based application.
     - Deployed a highly available, disaster recovery capable, global installation of GitHub Enterprise to unify source code management across all Intuit's business units.
-    - Brought Github into Intuit and unified previously fragmented source control management (Stash, Gitlab, SVN, Perforce) into one central instance resulting into drastic license cost saving and higher developers collaboration and productivity.
+    - Brought Github into Intuit and unified previously fragmented source control management (Stash, Gitlab, SVN, Perforce) into one central instance resulting in drastic license cost saving and higher developer's collaboration and productivity.
     - Advocate and coach other teams on git, Github, and agile best practices.
-    - Reduced developers onboarding time via auto provisioning cloud based development playgrounds.
-    - Active member of the GreenTeam working on reducing on campus waste.
+    - Reduced developer's onboarding time via auto-provisioning cloud-based development playgrounds.
+    - Active member of the GreenTeam working on reducing on-campus waste.
 
 - id: xcommerce
   type: work
@@ -111,7 +111,7 @@ events:
     - Architected a mission critical 24x7 distributed monitoring system (SCADA) for controlling, supervising and optimizing fuel cell operations over the internet allowing central operators to remotely monitor and control fuel cells installed across different states.
     - Developed an analytical platform for reporting, forecasting parts failure and maintenance schedule, and optimizing fleet energy generation.
     - Designed an abstraction layer to interact and control hardware components of the fuel cell.
-    - Automated the control and monitoring of machines on the manufacturing factories.
+    - Automated the control and monitoring of machines in the manufacturing factories.
     - Erected the first data center with hot backup hosting the SCADA application. Processing 3Gbps or real-time data coming from 200 customer sites.
     - Responsible for operations of all software running in the data center, manufacturing factories, and customer sites. Maintained 99.99% uptime in the past 24 months.
 
@@ -122,7 +122,7 @@ events:
   date: { from: 2004, to: 2008 }
   summaryXXX: Led the development and launch of many key products including Funding Mix, Consumer experience, customer service tools, marketing platform, merchant risk
   description:
-    - "Led several teams from different business areas: Funding Mix, Consumer Experience, Customer Service, Marketing Platform, Merchant Risk Assessment and Management."
+    - "Led several teams from different business areas: Funding Mix, Consumer Experience, Customer Service, Marketing Platform, and Merchant Risk Assessment and Management."
     - Managed distributed teams between California, Arizona, and India. Formed and groomed 3 new teams.
     - Responsible for architecture and technical design as well as project delivery and quality. Review, advise, and guide the technical design process. Enforce best practices in application development. Mentor and coach engineers for career growth as well as general people/team management activities.
     - Drive implementation of multiple simultaneous projects with a short 1-2 month development cycle. Hands-on project and resource management. Create and maintain project plan, tasks list, features list, bugs list. Assess risk mitigation.
